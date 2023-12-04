@@ -1,53 +1,25 @@
-from dash import Dash, dcc, html, callback, State, Output, Input
+import dash
+from dash import Dash, html, callback, State, Output, Input
 from dash.exceptions import PreventUpdate
 import dash_bootstrap_components as dbc
 
-app = Dash(external_stylesheets=[dbc.themes.SOLAR])
+app = Dash(external_stylesheets=[dbc.themes.SOLAR], use_pages=True)
 
-markdown_text = '''
-### Markdown
-
-This is a very simple way to do [links](http://commonmark.org/)!
-'''
-
-card = dbc.Card(
-    [
-        dbc.CardBody(
-            [
-                html.H4("Was ist dein Lieblingsessen?", className="card-title"),
-                html.P(
-                    dcc.RadioItems(options=['Pizza', 'Spagetti', 'Sushi'], value='Pizza', id='radio-input'),
-                    className="card-text",
-                ),
-                html.Button(id='submit-button-state', children='Submit'),
-                html.Div(id='output-div', children="", style={"margin-left": "15px"})
-            ]
-        ),
-    ],
-    style={"width": "18rem"},
-)
-
+# load layout of home page
 app.layout = html.Div(children=[
-    html.H1(
-        children="Test Webpage",
-        style={'textAlign': 'center', 'color': '#AAABBB'}
-    ),
-    #dcc.Markdown(children=markdown_text),
-    #html.Label("Was ist dein Lieblingsessen?"),
-    #dcc.RadioItems(options=['Pizza', 'Spagetti', 'Sushi'], value='Pizza', id='radio-input'),
-    #html.Button(id='submit-button-state', children='Submit'),
-    #html.Div(id='output-div', children="", style={"margin-left": "15px"}),
-    card
+    dash.page_container
 ])
 
 
-@callback(Output('output-div', 'children'),
+@callback(Output('card', 'children'),
           Input('submit-button-state', 'n_clicks'),
-          State('radio-input', 'value'))
-def update_output(n_clicks, radio_input):
+          State('radio-input', 'value'),
+          State('card', 'children'))
+def show_answer(n_clicks, radio_input, children):
     if n_clicks is None:
         raise PreventUpdate
-    return html.Div([f'Ich mag auch gerne {radio_input}', html.Button(children="Next")])
+    children[-1] = html.Div([f'Ich mag auch gerne {radio_input}', html.Button(children="Next", id="next")])
+    return children
 
 
 if __name__ == '__main__':
