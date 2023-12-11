@@ -18,7 +18,7 @@ app.layout = html.Div(children=[
 def show_answer(n_clicks, radio_input, children):
     if n_clicks is None:
         raise PreventUpdate
-    children[-1] = html.Div([f'Ich mag auch gerne {radio_input}', html.Button(children="Next", id="next")])
+    children[-1] = html.Div([f'Ich mag auch supergerne {radio_input}', html.Button(children="Next", id="next")])
     return children
 
 
