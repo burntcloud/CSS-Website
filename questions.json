@@ -1,0 +1,18 @@
+{"Questions": [
+  {"id": 0,
+    "question_text": "What is your favorite food?",
+    "options": ["Pizza", "Pasta", "Sushi", "Curry"],
+    "answer_text": "Nice, I like $ too!"
+  },
+  {"id": 1,
+    "question_text": "What is your favorite color?",
+    "options": ["Red", "Green", "Blue", "Yellow", "Pink"],
+    "answer_text": "Nice, my favorite color is $ too!"
+  },
+  {"id": 2,
+    "question_text": "What is your favorite animal?",
+    "options": ["Cat", "Dog", "Horse", "Lion"],
+    "answer_text": "I like $s too, but my favorite animal is the panda."
+  }
+  ]
+}

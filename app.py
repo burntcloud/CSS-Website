@@ -1,26 +1,25 @@
 import dash
-from dash import Dash, html, callback, State, Output, Input
+from dash import Dash, html, callback, State, Output, Input, dcc
 from dash.exceptions import PreventUpdate
 import dash_bootstrap_components as dbc
+import json
 
+
+with open('questions.json', "r") as f:
+    # load questions from json file and set current question index to 0
+    questions = json.load(f)
+    questions["index"] = 0
+
+
+#app = Dash(external_stylesheets=[dbc.themes.SOLAR], use_pages=True, suppress_callback_exceptions=True)
 app = Dash(external_stylesheets=[dbc.themes.SOLAR], use_pages=True)
 
-# load layout of home page
 app.layout = html.Div(children=[
-    dash.page_container
+    dash.page_container,
+    dcc.Store(id="global_store", storage_type="session", data=questions),
 ])
-
-
-@callback(Output('card', 'children'),
-          Input('submit-button-state', 'n_clicks'),
-          State('radio-input', 'value'),
-          State('card', 'children'))
-def show_answer(n_clicks, radio_input, children):
-    if n_clicks is None:
-        raise PreventUpdate
-    children[-1] = html.Div([f'Ich mag auch gerne {radio_input}', html.Button(children="Next", id="next")])
-    return children
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+
