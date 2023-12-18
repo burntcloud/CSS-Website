@@ -3,6 +3,8 @@ from dash import Dash, html, callback, State, Output, Input, dcc
 from dash.exceptions import PreventUpdate
 import dash_bootstrap_components as dbc
 import json
+import __main__ as main
+main.__file__ = "main_file"
 
 
 with open('questions.json', "r") as f:
@@ -22,4 +24,3 @@ app.layout = html.Div(children=[
 
 if __name__ == '__main__':
     app.run(debug=True)
-

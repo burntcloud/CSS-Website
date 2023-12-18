@@ -1,4 +1,5 @@
 from dash import html, register_page, dcc, callback, Input, Output, State
+import dash_bootstrap_components as dbc
 
 register_page(__name__, path="/answer")
 
@@ -8,7 +9,7 @@ layout = html.Div(children=[
         children="Test answer view",
         style={'textAlign': 'center', 'color': '#AAABBB'}),
     html.P(id="answer_text"),
-    dcc.Link(html.Button("Next", id='next_button'), id="next_button_link", href="/question", refresh=True),
+    dcc.Link(dbc.Button("Next", id='next_button'), id="next_button_link", href="/question", refresh=True),
 ])
 
 

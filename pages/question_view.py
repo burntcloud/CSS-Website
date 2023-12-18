@@ -13,7 +13,7 @@ card = dbc.Card([
             id="radio_items",
             className="card-text",
         ),
-        dcc.Link(html.Button(id='submit_button', children="Submit"), href="/answer", refresh=True),
+        dcc.Link(dbc.Button(id='submit_button', children="Submit"), href="/answer", refresh=True),
         html.Div(id='output_div', children="", style={"margin-left": "15px"})
     ],
         id='card'
