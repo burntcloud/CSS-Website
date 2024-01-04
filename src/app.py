@@ -15,6 +15,7 @@ with open('questions.json', "r") as f:
 
 #app = Dash(external_stylesheets=[dbc.themes.SOLAR], use_pages=True, suppress_callback_exceptions=True)
 app = Dash(external_stylesheets=[dbc.themes.SOLAR], use_pages=True)
+server = app.server
 
 app.layout = html.Div(children=[
     dash.page_container,
