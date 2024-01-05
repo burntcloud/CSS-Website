@@ -1,17 +1,20 @@
 {"Questions": [
   {"id": 0,
-    "image": "",
-    "description_text": "There are many tasty foods out there",
-    "question_text": "What is your favorite food?",
-    "options": ["Pizza", "Pasta", "Sushi", "Curry"],
-    "answer_text": "Nice, I like $ too!"
+    "image": "sowjetische_Ostarbeiterinnen.jpg",
+    "description_text": "During the National Socialist era, especially during the Second World War, numerous people from annexed territories were forcibly brought to the then German Reich for forced labor. This exploitation was omnipresent in peoples everyday lives and reached an enormous dimension. ",
+    "question_text": "Can you estimate how many people had to suffer under forced labor during the Second World War?",
+    "options": ["1.5 millionen", "200.000", "13 millionen"],
+    "answer_text": "The right answer is 13 million. \n Over the course of the Second World War, around 13 million people were deported from the occupied territories to the German Reich and brutally exploited. Forced labor was used to maintain agricultural supplies and armaments production. This exploitation was omnipresent in the everyday lives of the German population, benefiting many companies and corporations, but also countless private individuals and municipal administrations.  Conditions varied according to the national origin and gender of those affected and were generally very brutal and rough, resulting in an estimated 500,000 deaths. Despite the close proximity and the enormous number of people affected, the crime was largely suppressed after the end of the war and responsibility was systematically concealed. Today, the historical sites of forced labor serve as important reminders of the crime.",
+    "answer_image": "Europa_Karte.jpg",
+    "answer_image_style": {"width": "40%", "margin-top": "60px", "border-radius": "30px"}
   },
   {"id": 1,
     "image": "workinghours.png",
     "description_text": "This is a very long info text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "question_text": "What is your favorite color?",
     "options": ["Red", "Green", "Blue", "Yellow", "Pink"],
-    "answer_text": "Nice, my favorite color is $ too!"
+    "answer_text": "Nice, my favorite color is $ too!",
+    "answer_image": " "
   },
   {"id": 2,
     "image": "",
@@ -19,7 +22,8 @@
     "question_text": "What is your favorite animal?",
     "options": ["Cat", "Dog", "Horse", "Lion"],
     "option_images": ["cat.jpeg", "dog.jpeg", "horse.jpeg", "lion.jpeg"],
-    "answer_text": "I like $s too, but my favorite animal is the panda."
+    "answer_text": "I like $s too, but my favorite animal is the panda.",
+    "answer_image": " "
   }
   ]
 }
