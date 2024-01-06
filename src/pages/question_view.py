@@ -55,7 +55,9 @@ def load_header(pathname, data):
           State('global_store', 'data'))
 def load_image(pathname, data):
     question_index = data["index"]
-    image_url = data["Questions"][question_index]["image"]
+    image_url = ""
+    if "image" in data["Questions"][question_index].keys():
+        image_url = data["Questions"][question_index]["image"]
     # image style (size, padding etc.) may be given as "image_style" in the json, if not use default
     default_style = {"width": "60%", "margin-top": "30px", "border-radius": "15px"}
     if "image_style" not in data["Questions"][question_index].keys():

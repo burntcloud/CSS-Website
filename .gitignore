@@ -1,4 +1,4 @@
 .idea/*
-pages/__pycache__/
+src/pages/__pycache__/
 .DS_Store
 **/venv/

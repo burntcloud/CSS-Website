@@ -12,8 +12,9 @@ answer_layout = html.Div(
                 html.Div(id="answer_image")),
                 dbc.CardBody([
                     html.P(id="answer_text"),
-                    #html.Div(id="answer_image"),
-                    dcc.Link(dbc.Button("Next", id='next_button'), id="next_button_link", href="/question", refresh=True)
+                    # html.Div(id="answer_image"),
+                    dcc.Link(dbc.Button("Next", id='next_button'), id="next_button_link", href="/question",
+                             refresh=True)
                 ])
             ])],
         )
@@ -26,15 +27,18 @@ layout = html.Div(children=[
     answer_layout,
 ])
 
-# on page load, insert or delete the question's image and if necessary adapt size
+
+# on page load, insert or delete the answer's image and if necessary adapt size
 @callback(Output('answer_image', 'children'),
           Output('answer_image', 'style'),
           Input('url_answer', 'pathname'),
           State('global_store', 'data'))
 def load_image(pathname, data):
     question_index = data["index"]
-    answer_image_url = data["Questions"][question_index]["answer_image"]
-    # image style (size, padding etc.) may be given as "image_style" in the json, if not use default
+    answer_image_url = ""
+    if "answer_image" in data["Questions"][question_index].keys():
+        answer_image_url = data["Questions"][question_index]["answer_image"]
+    # image style (size, padding etc.) may be given as "answer_image_style" in the json, if not use default
     default_style = {"width": "30%", "margin-top": "30px", "border-radius": "15px"}
     if "answer_image_style" not in data["Questions"][question_index].keys():
         style = default_style
@@ -50,12 +54,9 @@ def load_image(pathname, data):
         show_image_style = {"display": "None"}
     return img, show_image_style
 
-# When page is loaded, choose correct answer text, update the question index in the global store
-# and if you run out of questions, let the next button redirect to home
-# any '$' in the answer text is replaced by the user's answer
+
+# on page load, load the answer text
 @callback(Output('answer_text', 'children'),
-          Output('global_store', 'data'),
-          Output('next_button_link', 'href'),
           Input('url_answer', 'pathname'),
           State('global_store', 'data'))
 def load_answer(pathname, data):
@@ -65,8 +66,22 @@ def load_answer(pathname, data):
     if '$' in answer:
         user_choice = data["user_choice"]
         answer = answer.replace('$', user_choice)
+    your_answer = html.P(html.B("Your answer: " + data["user_choice"]))
+    answer = html.P([your_answer, answer])
+    return answer
+
+
+# When page is loaded, update the question index in the global store
+# and if you run out of questions, let the next button redirect to home
+@callback(Output('global_store', 'data'),
+          Output('next_button_link', 'href'),
+          Input('url_answer', 'pathname'),
+          State('global_store', 'data'))
+def load_answer(pathname, data):
+    # find current question index, load the corresponding answer text, increase question index
+    question_index = data["index"]
     data["index"] += 1
     if data["index"] >= len(data["Questions"]):
         data["index"] = 0
-        return answer, data, "/"
-    return answer, data, "/question"
+        return data, "/"
+    return data, "/question"
