@@ -56,8 +56,6 @@ def load_image(pathname, data):
 
 # on page load, load the answer text
 @callback(Output('answer_text', 'children'),
-          Output('global_store', 'data'),
-          Output('next_button_link', 'href'),
           Input('url_answer', 'pathname'),
           State('global_store', 'data'))
 def load_answer(pathname, data):

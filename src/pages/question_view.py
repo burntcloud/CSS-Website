@@ -109,7 +109,8 @@ def load_options(pathname, data):
     # TODO: Layout is messed up for mobile
     if "option_images" in current_question.keys() and len(current_question["option_images"]) == len(text_options):
         img_options = [html.Img(src=get_asset_url(x), style=style) for x in current_question["option_images"]]
-        options = [{"label": img_options[i], "value": text_options[i]} for i in range(len(text_options))]
+        labels = [html.P([img_options[i], html.P(text_options[i])]) for i in range(len(text_options))]
+        options = [{"label": labels[i], "value": text_options[i]} for i in range(len(text_options))]
     else:
         options = text_options
     return options
