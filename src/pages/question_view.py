@@ -22,8 +22,8 @@ question_layout = html.Div(
             dbc.Card([html.Center(
                 html.Div(id="image")),
                 dbc.CardBody([
-                    html.P(id="description_text", className="card-text",style={'font-size':'25px'}),
-                    html.H4(id="question_text",style={'font-size':'28px'}),
+                    html.P(id="description_text", className="card-text", style={'font-size': '20px'}),
+                    html.H4(id="question_text", style={'font-size': '22px', 'font-weight': 'bold'}),
                     answer_options,
                     dcc.Link(dbc.Button(id='submit_button', children="Submit", style={"margin-top": "30px", "fontSize": "20px","background-color": "#348994", "border": "none"}), href="/answer", refresh=True)
                 ])

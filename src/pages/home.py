@@ -8,11 +8,11 @@ register_page(__name__, path="/")
 layout = html.Div(
     children=[
         dbc.Container([
-            html.H1("CSS Quiz-Page",style={'font-size':'70px'}),
-            html.Img(src=get_asset_url('NS_Doku_Logo.png'), style={'width': '40%'}),
+            html.H1("CSS Quizpage", style={'font-size':'70px'}),
+            html.Img(src=get_asset_url('NS_Doku_Logo.png'), style={'width': '20%'}),
             dbc.Card([
                 dbc.CardBody([
-                    html.H2("Welcome to the Quiz"),
+                    html.H2("Welcome to the Quiz!"),
                     #html.P("The framing of the quiz:",style={'font-size':'25px'}),
                     html.P("During National Socialism, especially during the Second World War, \
                            numerous people from the annexed territories were deported to the then \
@@ -28,14 +28,14 @@ layout = html.Div(
                            Responsibility and Future\" in 2000. Only then did minimal compensation begin \
                            to be provided to former forced laborers and their relatives. The historical \
                            sites of forced labor, such as the RAW here in Neuaubing, are important \
-                           reminders of the crime today.",style={'font-size':'25px'}),
+                           reminders of the crime today.",style={'font-size':'20px'}),
                            html.P("This quiz serves to remind of the crime of forced labor and \
                                   to educate about the circumstances and living conditions of the \
                                   people. Please bear in mind that these questions are based on \
                                   historical facts and refer to the reality of many people's suffering \
                                   and hardship during this time. The quiz is not intended to test your \
                                   prior knowledge, but to help raise awareness of the historical \
-                                  reality.",style={'font-size':'25px'})
+                                  reality.",style={'font-size':'20px'})
                 ])
             ]),
                         dcc.Link(dbc.Button("Start Quiz",style={'font-size':'20px',"background-color": "#348994", "border": "none"}), href="/question", refresh=True)

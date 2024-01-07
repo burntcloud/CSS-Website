@@ -11,7 +11,7 @@ answer_layout = html.Div(
             dbc.Card([html.Center(
                 html.Div(id="answer_image")),
                 dbc.CardBody([
-                    html.P(id="answer_text",style={'font-size':'25px'}),
+                    html.P(id="answer_text",style={'font-size': '20px'}),
                     #html.Div(id="answer_image"),
                     dcc.Link(dbc.Button("Next", id='next_button',style={"margin-top": "30px", "fontSize": "20px","background-color": "#348994", "border": "none"}), id="next_button_link", href="/question", refresh=True)
                 ])

@@ -12,8 +12,6 @@ with open('questions.json', "r") as f:
     questions = json.load(f)
     questions["index"] = 0
 
-
-#app = Dash(external_stylesheets=[dbc.themes.SOLAR], use_pages=True, suppress_callback_exceptions=True)
 app = Dash(external_stylesheets=[dbc.themes.SOLAR], use_pages=True)
 server = app.server
 
@@ -24,4 +22,4 @@ app.layout = html.Div(children=[
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=8051)
