@@ -11,10 +11,9 @@ answer_layout = html.Div(
             dbc.Card([html.Center(
                 html.Div(id="answer_image")),
                 dbc.CardBody([
-                    html.P(id="answer_text"),
-                    # html.Div(id="answer_image"),
-                    dcc.Link(dbc.Button("Next", id='next_button'), id="next_button_link", href="/question",
-                             refresh=True)
+                    html.P(id="answer_text",style={'font-size':'25px'}),
+                    #html.Div(id="answer_image"),
+                    dcc.Link(dbc.Button("Next", id='next_button',style={"margin-top": "30px", "fontSize": "20px","background-color": "#348994", "border": "none"}), id="next_button_link", href="/question", refresh=True)
                 ])
             ])],
         )
@@ -38,8 +37,8 @@ def load_image(pathname, data):
     answer_image_url = ""
     if "answer_image" in data["Questions"][question_index].keys():
         answer_image_url = data["Questions"][question_index]["answer_image"]
-    # image style (size, padding etc.) may be given as "answer_image_style" in the json, if not use default
-    default_style = {"width": "30%", "margin-top": "30px", "border-radius": "15px"}
+    # image style (size, padding etc.) may be given as "image_style" in the json, if not use default
+    default_style = {"width": "70%", "margin-top": "30px", "border-radius": "15px"}
     if "answer_image_style" not in data["Questions"][question_index].keys():
         style = default_style
     else:
@@ -57,6 +56,8 @@ def load_image(pathname, data):
 
 # on page load, load the answer text
 @callback(Output('answer_text', 'children'),
+          Output('global_store', 'data'),
+          Output('next_button_link', 'href'),
           Input('url_answer', 'pathname'),
           State('global_store', 'data'))
 def load_answer(pathname, data):
