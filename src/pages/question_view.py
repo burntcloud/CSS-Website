@@ -11,7 +11,7 @@ answer_options = dbc.Container(dbc.RadioItems(
     id='radio_input',
     className="btn-group",  # all in one line
     inputClassName="btn-check",  # remove circles
-    labelClassName="btn btn-outline-primary",  # make options look like buttons
+    labelClassName="btn btn-outline-secondary btn-lg",  # make options look like buttons
 ), style={"padding-left": "0px"}, className="radio-group")
 
 # blueprint for the question view layout, needs ids "header", "image", "description_text", "question_text" and "submit_button"
@@ -22,10 +22,10 @@ question_layout = html.Div(
             dbc.Card([html.Center(
                 html.Div(id="image")),
                 dbc.CardBody([
-                    html.P(id="description_text", className="card-text"),
-                    html.H4(id="question_text"),
+                    html.P(id="description_text", className="card-text",style={'font-size':'25px'}),
+                    html.H4(id="question_text",style={'font-size':'28px'}),
                     answer_options,
-                    dcc.Link(dbc.Button(id='submit_button', children="Submit", style={"margin-top": "30px"}), href="/answer", refresh=True)
+                    dcc.Link(dbc.Button(id='submit_button', children="Submit", style={"margin-top": "30px", "fontSize": "20px","background-color": "#348994", "border": "none"}), href="/answer", refresh=True)
                 ])
             ])],
             )
@@ -55,7 +55,9 @@ def load_header(pathname, data):
           State('global_store', 'data'))
 def load_image(pathname, data):
     question_index = data["index"]
-    image_url = data["Questions"][question_index]["image"]
+    image_url = ""
+    if "image" in data["Questions"][question_index].keys():
+        image_url = data["Questions"][question_index]["image"]
     # image style (size, padding etc.) may be given as "image_style" in the json, if not use default
     default_style = {"width": "60%", "margin-top": "30px", "border-radius": "15px"}
     if "image_style" not in data["Questions"][question_index].keys():
