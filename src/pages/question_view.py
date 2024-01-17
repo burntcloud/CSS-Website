@@ -5,18 +5,20 @@ import dash_bootstrap_components as dbc
 register_page(__name__, path="/question")
 
 # blueprint for the answer options, styled as radio buttons
-answer_options = dbc.Container(dbc.RadioItems(
-    options=[],
-    value="",
-    id='radio_input',
-    className="btn-group",  # all in one line
-    inputClassName="btn-check",  # remove circles
-    labelClassName="btn btn-outline-secondary btn-lg",  # make options look like buttons
-), style={"padding-left": "0px"}, className="radio-group")
+answer_options = dbc.Container(
+            dbc.RadioItems(
+                options=[],
+                value="",
+                id='radio_input',
+                #className="btn-group",  # all in one line
+                inputClassName="btn-check",  # remove circles
+                labelClassName="btn btn-outline-secondary btn-lg",  # make options look like buttons
+            ), style={"padding-left": "0px"}, className="radio-group")
 
-# blueprint for the question view layout, needs ids "header", "image", "description_text", "question_text" and "submit_button"
+# blueprint for the question view layout, needs ids "header", "image", "description_text", "question_text" and
+# "submit_button"
 question_layout = html.Div(
-    children=[
+    [
         dbc.Container([
             html.H1(children="", id="header", style={"text-align": "center"}),
             dbc.Card([html.Center(
@@ -25,10 +27,12 @@ question_layout = html.Div(
                     html.P(id="description_text", className="card-text", style={'font-size': '20px'}),
                     html.H4(id="question_text", style={'font-size': '22px', 'font-weight': 'bold'}),
                     answer_options,
-                    dcc.Link(dbc.Button(id='submit_button', children="Submit", style={"margin-top": "30px", "fontSize": "20px","background-color": "#348994", "border": "none"}), href="/answer", refresh=True)
+                    dcc.Link(dbc.Button(id='submit_button', children="Submit",
+                                        style={"margin-top": "30px", "fontSize": "20px", "background-color": "#348994",
+                                               "border": "none"}), href="/answer", refresh=True)
                 ])
             ])],
-            )
+        )
     ],
     id="question_layout"
 )
