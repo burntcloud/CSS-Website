@@ -6,14 +6,14 @@ register_page(__name__, path="/question")
 
 # blueprint for the answer options, styled as radio buttons
 answer_options = dbc.Container(
-            dbc.RadioItems(
-                options=[],
-                value="",
-                id='radio_input',
-                #className="btn-group",  # all in one line
-                inputClassName="btn-check",  # remove circles
-                labelClassName="btn btn-outline-secondary btn-lg",  # make options look like buttons
-            ), style={"padding-left": "0px"}, className="radio-group")
+    dbc.RadioItems(
+        options=[],
+        value="",
+        id='radio_input',
+        # className="btn-group",  # all in one line
+        inputClassName="btn-check",  # remove circles
+        labelClassName="btn btn-outline-secondary btn-lg",  # make options look like buttons
+    ), style={"padding-left": "0px"}, className="radio-group")
 
 # blueprint for the question view layout, needs ids "header", "image", "description_text", "question_text" and
 # "submit_button"
@@ -49,7 +49,10 @@ layout = html.Div(children=[
           State('global_store', 'data'))
 def load_header(pathname, data):
     question_index = data["index"]
-    return "Question " + str(data["Questions"][question_index]["id"])
+    language = data["language"]
+
+    # return "Question " + str(data["Questions"][question_index]["id"])
+    return "Question " + str(data[language][question_index]["id"])
 
 
 # on page load, insert or delete the question's image and if necessary adapt size
@@ -59,15 +62,22 @@ def load_header(pathname, data):
           State('global_store', 'data'))
 def load_image(pathname, data):
     question_index = data["index"]
+    language = data["language"]
     image_url = ""
-    if "image" in data["Questions"][question_index].keys():
-        image_url = data["Questions"][question_index]["image"]
+    if "image" in data[language][question_index].keys():
+        image_url = data[language][question_index]["image"]
+    # if "image" in data["Questions"][question_index].keys():
+    #    image_url = data["Questions"][question_index]["image"]
     # image style (size, padding etc.) may be given as "image_style" in the json, if not use default
     default_style = {"width": "60%", "margin-top": "30px", "border-radius": "15px"}
-    if "image_style" not in data["Questions"][question_index].keys():
+
+    # if "image_style" not in data["Questions"][question_index].keys():
+    #    style = default_style
+    if "image_style" not in data[language][question_index].keys():
         style = default_style
     else:
-        style = data["Questions"][question_index]["image_style"]
+        style = data[language][question_index]["image_style"]
+        # style = data["Questions"][question_index]["image_style"]
     if image_url:
         img = dbc.CardImg(src=get_asset_url(image_url), top=True, style=style)
         # make image div visible
@@ -84,8 +94,10 @@ def load_image(pathname, data):
           Input('url_question', 'pathname'),
           State('global_store', 'data'))
 def load_description_text(pathname, data):
+    language = data["language"]
     question_index = data["index"]
-    description_text = data["Questions"][question_index]["description_text"]
+    description_text = data[language][question_index]["description_text"]
+    # description_text = data["Questions"][question_index]["description_text"]
     return description_text
 
 
@@ -94,8 +106,10 @@ def load_description_text(pathname, data):
           Input('url_question', 'pathname'),
           State('global_store', 'data'))
 def load_question_text(pathname, data):
+    language = data["language"]
     question_index = data["index"]
-    question_text = data["Questions"][question_index]["question_text"]
+    question_text = data[language][question_index]["question_text"]
+    # question_text = data["Questions"][question_index]["question_text"]
     return question_text
 
 
@@ -104,9 +118,12 @@ def load_question_text(pathname, data):
           Input('url_question', 'pathname'),
           State('global_store', 'data'))
 def load_options(pathname, data):
+    language = data["language"]
     question_index = data["index"]
-    current_question = data["Questions"][question_index]
-    text_options = data["Questions"][question_index]["options"]
+    current_question = data[language][question_index]
+    # current_question = data["Questions"][question_index]
+    text_options = data[language][question_index]["options"]
+    # text_options = data["Questions"][question_index]["options"]
     style = {"height": "170px"}
     # check if there are images
     # TODO: make buttons with image and text

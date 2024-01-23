@@ -5,12 +5,13 @@ import dash_bootstrap_components as dbc
 register_page(__name__, path="/")
 
 lang_buttons = dbc.RadioItems(
+    id="lang_buttons",
     className="btn-group",
     inputClassName="btn-check",
     labelClassName="btn btn-outline-primary",
-    options=[{"label": "Deutsch", "value": 1},
-             {"label": "English", "value": 2}],
-    value=1,
+    options=[{"label": "Deutsch", "value": "Deutsch"},
+             {"label": "English", "value": "English"}],
+    value="Deutsch",
     style={"float": "right"}
 )
 
@@ -24,41 +25,40 @@ layout = html.Div(
                  ]
             ),
             dbc.Row(
-                html.Img(src=get_asset_url('NS_Doku_Logo.png'), style={'width': '20%'})),
+                # html.Img(src=get_asset_url('NS_Doku_Logo.png'), style={'width': '20%'})
+            ),
             dbc.Row(
                 dbc.Card([
-                    dbc.CardBody([
-                        html.H2("Welcome to the Quiz!"),
-                        # html.P("The framing of the quiz:",style={'font-size':'25px'}),
-                        html.P("During National Socialism, especially during the Second World War, \
-                           numerous people from the annexed territories were deported to the then \
-                           German Reich for forced labor. The historian Ulrich Herbert described \
-                           this as the \"most violently organized deportation operation of all time.\" \
-                           Exploitation was omnipresent, \"without exception, everyone who experienced the \
-                           war in Germany as a young person or adult had some form of contact with the \
-                           foreign workers and prisoners of war.\" Despite the immediate proximity and \
-                           the enormous number of people affected, the crime was almost completely suppressed \
-                           after the end of the war. Responsibility was systematically concealed and compensation \
-                           claims ignored for decades. It was not until the 1980s that a public debate began, \
-                           which ultimately led to the establishment of the Foundation \"Remembrance, \
-                           Responsibility and Future\" in 2000. Only then did minimal compensation begin \
-                           to be provided to former forced laborers and their relatives. The historical \
-                           sites of forced labor, such as the RAW here in Neuaubing, are important \
-                           reminders of the crime today.", style={'font-size': '20px'}),
-                        html.P("This quiz serves to remind of the crime of forced labor and \
-                                  to educate about the circumstances and living conditions of the \
-                                  people. Please bear in mind that these questions are based on \
-                                  historical facts and refer to the reality of many people's suffering \
-                                  and hardship during this time. The quiz is not intended to test your \
-                                  prior knowledge, but to help raise awareness of the historical \
-                                  reality.", style={'font-size': '20px'})
-                    ])
+                    dbc.CardBody(id="intro_card")
                 ])),
             dbc.Row(
                 dcc.Link(
-                    dbc.Button("Start Quiz",
+                    dbc.Button("Start Quiz", id="start_button",
                                style={'font-size': '20px', "background-color": "#348994", "border": "none"}),
                     href="/question", refresh=True))
         ])
     ]
 )
+
+
+# for button update callback input output etc
+
+@callback(Output('global_store', 'data', allow_duplicate=True),
+          Output('intro_card', 'children'),
+          Output('start_button', 'children'),
+          Input('lang_buttons', 'value'),
+          State('global_store', 'data'),
+          prevent_initial_call=True)
+def update_store(value, data):
+    data["language"] = value
+    if value == "English":
+        children = [html.H2(data["Introduction"]["header"])]
+        for x in data["Introduction"]["content"]:
+            children.append(html.P(x))
+        children2 = "Start Quiz"
+    if value == "Deutsch":
+        children = [html.H2(data["Einführung"]["header"])]
+        for x in data["Einführung"]["content"]:
+            children.append(html.P(x))
+        children2 = "Quiz starten"
+    return data, children, children2

@@ -33,16 +33,17 @@ layout = html.Div(children=[
           Input('url_answer', 'pathname'),
           State('global_store', 'data'))
 def load_image(pathname, data):
+    language = data["language"]
     question_index = data["index"]
     answer_image_url = ""
-    if "answer_image" in data["Questions"][question_index].keys():
-        answer_image_url = data["Questions"][question_index]["answer_image"]
+    if "answer_image" in data[language][question_index].keys():
+        answer_image_url = data[language][question_index]["answer_image"]
     # image style (size, padding etc.) may be given as "image_style" in the json, if not use default
     default_style = {"width": "70%", "margin-top": "30px", "border-radius": "15px"}
-    if "answer_image_style" not in data["Questions"][question_index].keys():
+    if "answer_image_style" not in data[language][question_index].keys():
         style = default_style
     else:
-        style = data["Questions"][question_index]["answer_image_style"]
+        style = data[language][question_index]["answer_image_style"]
     if answer_image_url:
         img = dbc.CardImg(src=get_asset_url(answer_image_url), top=True, style=style)
         # make image div visible
@@ -59,9 +60,10 @@ def load_image(pathname, data):
           Input('url_answer', 'pathname'),
           State('global_store', 'data'))
 def load_answer(pathname, data):
+    language = data["language"]
     # find current question index, load the corresponding answer text, increase question index
     question_index = data["index"]
-    answer = data["Questions"][question_index]["answer_text"]
+    answer = data[language][question_index]["answer_text"]
     if '$' in answer:
         user_choice = data["user_choice"]
         answer = answer.replace('$', user_choice)
@@ -77,10 +79,11 @@ def load_answer(pathname, data):
           Input('url_answer', 'pathname'),
           State('global_store', 'data'))
 def load_answer(pathname, data):
+    language = data["language"]
     # find current question index, load the corresponding answer text, increase question index
     question_index = data["index"]
     data["index"] += 1
-    if data["index"] >= len(data["Questions"]):
+    if data["index"] >= len(data[language]):
         data["index"] = 0
         return data, "/"
     return data, "/question"

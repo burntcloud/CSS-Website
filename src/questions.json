@@ -1,4 +1,4 @@
-{"Questions": [
+{"English": [
   {"id": 0,
     "image": "sowjetische_Ostarbeiterinnen.jpg",
     "description_text": "During the war, huge numbers of people were deported from the annexed territories. The use of forced laborers had long been part of everyday life. Forced laborers and prisoners of war were not only used in armaments production, but in companies and all branches of industry. ",
@@ -25,5 +25,44 @@
     "answer_text": "Working conditions depended very much on the nationality of the worker. Forced laborers from northern, western, southern and even southeastern Europe received in principle the same wages as their German colleagues. Poles and \"Eastern workers\" (\"Ostarbeiter\") were at a severe disadvantage from the outset due to discriminatory regulations. \"Equal pay for equal work\" did not apply. The \"Polish decrees\" of March 1940 stipulated that Polish forced laborers were to receive 20 percent less pay than Germans.    MORE TEXT TO FOLLOW   (Explanation of labels etc.)",
     "answer_image": "Kennzeichen.png"
   }
-  ]
+  ],
+  "Deutsch": [
+    {"id": 0,
+      "image": "sowjetische_Ostarbeiterinnen.jpg",
+      "description_text": "Während des Krieges wurden massenhaft Menschen aus den annektierten Gebieten verschleppt. Der Einsatz von Zwangsarbeiter*innen war längst im Alltag der Menschen angekommen. Nicht nur in der Rüstungsproduktion, sondern in Firmen und jeglichen Branchen wurden Zwangsarbeit und Kriegsgefangene eingesetzt.",
+      "question_text": "Können Sie schätzen, wie hoch der Anteil von Zwangsarbeitern und Kriegsgefangenen an der Zahl der Arbeitenden im Jahr 1944 war?",
+      "options": ["Jeder 10te", "Jeder 4te", "Jeder 20te"],
+      "option_images": ["Anteil_10.png", "Anteil_4.png", "Anteil_20.png"],
+      "answer_text": "Die richtige Antwort ist: Jeder 4te Arbeiter. Im Sommer 1944 standen 22,9 Millionen arbeitenden Deutschen 5,7 Millionen ausländische Zivilarbeitern und 1,9 Millionen Kriegsgefangenen gegenüber. Während des ganzen Weltkrieges wurden 13 Millionen Zwangsarbeiterinnen und Zwangsarbeiter eingesetzt. Durch wurde vor allem die landwirtschaftliche Versorgung und die Rüstungsproduktion aufrechterhalten. Fast jeder zweite Arbeiter in der Landwirtschaft, jeder Dritte im Bergbau war ein ausländischer ziviler Zwangsarbeiter oder Kriegsgefangener. Es profitierten aber auch zahllose Einzelpersonen und städtische Verwaltungen. Besonders hoch war der Anteil an Zwangsarbeitern bei NS-Unternehmen wie den Hermann-Göring-Werken oder staatlichen Unternehmen wie der Reichsbahn. \n",
+      "answer_image": "Kriegsgefangene_Moosburg.png",
+      "answer_image_style": {"width": "50%", "margin-top": "60px", "border-radius": "20px"}
+    },
+    {"id": 1,
+      "image": "",
+      "description_text":"Wir wissen jetzt, dass eine enorme Anzahl an Menschen als Zwangsarbeiter im Deutschen Reich gearbeitet haben.",
+      "question_text": "Warum reden wir dabei eigentlich von „Zwangsarbeit“?",
+      "options": ["Weil Zwangsarbeiter kein Gehalt bekommen haben", "Weil alle Zwangsarbeiter unter Zwang und gegen ihren Willen arbeiten mussten", "Weil sie ihre Arbeitsverhältnisse nicht eigenständigen auflösen konnten und um ihr Überleben fürchten mussten"],
+      "answer_text": "Alle Antworten haben ihren Anspruch. Auf jeden Fall richtig ist, dass Zwangsarbeiter ihre Arbeitsverhältnisse nicht eigenständigen auflösen konnten und um ihr Überleben fürchten mussten.\nJens-Christian Wagner „wenn die Arbeit gegen den Willen der Beschäftigten mit außerökonomischen Zwangsmaßnahmen durchgesetzt wurde“ (S.13)\n",
+      "answer_image": "Arbeitskarte.png"
+    },
+    {"id": 2,
+      "image": "Schlafraum_Ostarbeiter.png",
+      "description_text":"Die Zwangsarbeiter sind aus den annektierten Gebieten nach Deutschland gebracht worden. Diese hatten also sehr diverse Nationalitäten, darunter Franzosen, Italiener, Polen, Serben, Sowjetbürger. Die Lebensbedingungen der Zwangsarbeiter waren sehr prekär und die Arbeit war hart, was zu Krankheit und auch Tod führte.\n",
+      "question_text": "Waren die Arbeitsbedingungen für alle Zwangsarbeiter gleich?",
+      "options": ["Ja, alle Zwangsarbeiter hatten den gleichen prekären rechtlichen Status.", "Nein, die Arbeitsbedingungen hingen stark von der nationalen Zugehörigkeit ab."],
+      "answer_text": "Die Arbeitsbedingungen hingen sehr stark von der nationalen Zugehörigkeit ab. Zwangsarbeiter aus Nord-, West-, Süd- und selbst Südosteuropa erhielten im Prinzip denselben Lohn wie ihre deutschen Kollegen. Polen und „Ostarbeiter“ waren von Anfang an durch diskriminierende Verordnungen stark benachteiligt. „Gleicher Lohn für gleiche Arbeit“ galt nicht. In den „Polen-Erlassen“ vom März 1940 wurde festgelegt, dass polnische Zwangsarbeiter 20 Prozent weniger Lohn als Deutsche erhalten sollten.",
+      "answer_image": "Kennzeichen.png"
+    }
+  ],
+  "Einführung":
+    {
+      "header": "Willkommen beim Quiz!",
+      "content":[]
+    }
+  ,
+  "Introduction":
+    {
+      "header": "Welcome to the Quiz!",
+      "content": ["During National Socialism, especially during the Second World War, numerous people from the annexed territories were deported to the then German Reich for forced labor. The historian Ulrich Herbert described this as the \"most violently organized deportation operation of all time.\" Exploitation was omnipresent, \"without exception, everyone who experienced the war in Germany as a young person or adult had some form of contact with the foreign workers and prisoners of war.\" Despite the immediate proximity and the enormous number of people affected, the crime was almost completely suppressed after the end of the war. Responsibility was systematically concealed and compensation claims ignored for decades. It was not until the 1980s that a public debate began, which ultimately led to the establishment of the Foundation \"Remembrance, Responsibility and Future\" in 2000. Only then did minimal compensation begin to be provided to former forced laborers and their relatives. The historical sites of forced labor, such as the RAW here in Neuaubing, are important reminders of the crime today.", "This quiz serves to remind of the crime of forced labor and to educate about the circumstances and living conditions of the people. Please bear in mind that these questions are based on historical facts and refer to the reality of many people's suffering and hardship during this time. The quiz is not intended to test your prior knowledge, but to help raise awareness of the historical reality."]
+    }
 }
