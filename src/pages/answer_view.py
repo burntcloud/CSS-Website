@@ -11,9 +11,9 @@ answer_layout = html.Div(
             dbc.Card([html.Center(
                 html.Div(id="answer_image")),
                 dbc.CardBody([
-                    html.P(id="answer_text",style={'font-size': '20px'}),
+                    html.P(id="answer_text", style={'font-size': '20px'}),
                     #html.Div(id="answer_image"),
-                    dcc.Link(dbc.Button("Next", id='next_button',style={"margin-top": "30px", "fontSize": "20px","background-color": "#348994", "border": "none"}), id="next_button_link", href="/question", refresh=True)
+                    dcc.Link(dbc.Button("Next", id='next_button', style={"margin-top": "30px", "fontSize": "20px", "background-color": "#348994", "border": "none"}), id="next_button_link", href="/question", refresh=True)
                 ])
             ])],
         )
@@ -57,19 +57,26 @@ def load_image(pathname, data):
 
 # on page load, load the answer text
 @callback(Output('answer_text', 'children'),
+          Output('next_button', 'children'),
           Input('url_answer', 'pathname'),
           State('global_store', 'data'))
 def load_answer(pathname, data):
     language = data["language"]
+
     # find current question index, load the corresponding answer text, increase question index
     question_index = data["index"]
     answer = data[language][question_index]["answer_text"]
     if '$' in answer:
         user_choice = data["user_choice"]
         answer = answer.replace('$', user_choice)
-    your_answer = html.P(html.B("Your answer: " + data["user_choice"]))
+    if language == "Deutsch":
+        button_text = "Nächste Frage"
+        your_answer = html.P(html.B("Angegebene Antwort: " + data["user_choice"]))
+    elif language == "English":
+        button_text = "Next"
+        your_answer = html.P(html.B("Your answer: " + data["user_choice"]))
     answer = html.P([your_answer, answer])
-    return answer
+    return answer, button_text
 
 
 # When page is loaded, update the question index in the global store

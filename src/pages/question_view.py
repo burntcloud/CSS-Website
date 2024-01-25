@@ -91,14 +91,19 @@ def load_image(pathname, data):
 
 # on page load, update the description text
 @callback(Output('description_text', 'children'),
+          Output('submit_button', 'children'),
           Input('url_question', 'pathname'),
           State('global_store', 'data'))
 def load_description_text(pathname, data):
     language = data["language"]
+    if language == "Deutsch":
+        button_text = "Abschicken"
+    elif language == "English":
+        button_text = "Submit"
     question_index = data["index"]
     description_text = data[language][question_index]["description_text"]
     # description_text = data["Questions"][question_index]["description_text"]
-    return description_text
+    return description_text, button_text
 
 
 # on page load, update the question text
