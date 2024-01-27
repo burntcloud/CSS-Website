@@ -13,7 +13,10 @@ answer_options = dbc.Container(
         # className="btn-group",  # all in one line
         inputClassName="btn-check",  # remove circles
         labelClassName="btn btn-outline-secondary btn-lg",  # make options look like buttons
+        inline=True
     ), style={"padding-left": "0px"}, className="radio-group")
+
+progress_bar = dbc.Progress(id="progress")
 
 # blueprint for the question view layout, needs ids "header", "image", "description_text", "question_text" and
 # "submit_button"
@@ -31,7 +34,9 @@ question_layout = html.Div(
                                         style={"margin-top": "30px", "fontSize": "20px", "background-color": "#348994",
                                                "border": "none"}), href="/answer", refresh=True)
                 ])
-            ])],
+            ]),
+            progress_bar
+        ],
         )
     ],
     id="question_layout"
@@ -44,15 +49,21 @@ layout = html.Div(children=[
 
 
 # on page load, update the number in the header
+# also update the progress bar,
 @callback(Output('header', 'children'),
+          Output('progress', 'value'),
+          Output('progress', 'label'),
           Input('url_question', 'pathname'),
           State('global_store', 'data'))
 def load_header(pathname, data):
     question_index = data["index"]
     language = data["language"]
-
+    question_id = data[language][question_index]["id"]
+    max_id = data[language][-1]['id']
+    progress_num = min((question_id/(max_id+1))*100, 100)
+    label = f"{progress_num} %" if progress_num >= 5 else ""
     # return "Question " + str(data["Questions"][question_index]["id"])
-    return "Question " + str(data[language][question_index]["id"])
+    return "Question " + str(question_id), progress_num, label
 
 
 # on page load, insert or delete the question's image and if necessary adapt size
