@@ -43,18 +43,6 @@ layout = html.Div(children=[
 ])
 
 
-# on page load, update the number in the header
-@callback(Output('header', 'children'),
-          Input('url_question', 'pathname'),
-          State('global_store', 'data'))
-def load_header(pathname, data):
-    question_index = data["index"]
-    language = data["language"]
-
-    # return "Question " + str(data["Questions"][question_index]["id"])
-    return "Question " + str(data[language][question_index]["id"])
-
-
 # on page load, insert or delete the question's image and if necessary adapt size
 @callback(Output('image', 'children'),
           Output('image', 'style'),
@@ -111,6 +99,7 @@ def load_description_text(pathname, data):
           Input('url_question', 'pathname'),
           State('global_store', 'data'))
 def load_question_text(pathname, data):
+    print("n questions", len(data[data["language"]]))
     language = data["language"]
     question_index = data["index"]
     question_text = data[language][question_index]["question_text"]
@@ -131,8 +120,6 @@ def load_options(pathname, data):
     # text_options = data["Questions"][question_index]["options"]
     style = {"height": "170px"}
     # check if there are images
-    # TODO: make buttons with image and text
-    # TODO: Layout is messed up for mobile
     if "option_images" in current_question.keys() and len(current_question["option_images"]) == len(text_options):
         img_options = [html.Img(src=get_asset_url(x), style=style) for x in current_question["option_images"]]
         labels = [html.P([img_options[i], html.P(text_options[i])]) for i in range(len(text_options))]
@@ -148,5 +135,11 @@ def load_options(pathname, data):
           State('global_store', 'data'),
           prevent_initial_call=True)
 def update_store(radio_value, data):
-    data["user_choice"] = radio_value
+    language = data["language"]
+    question_index = data["index"]
+    options = data[language][question_index]["options"]
+    for i, option in enumerate(options):
+        if radio_value == option:
+            data["user_choice"] = i
+            break
     return data

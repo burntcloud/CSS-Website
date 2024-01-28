@@ -1,5 +1,6 @@
 from dash import html, register_page, dcc, callback, Input, Output, State, get_asset_url
 import dash_bootstrap_components as dbc
+from dash.exceptions import PreventUpdate
 
 register_page(__name__, path="/answer")
 
@@ -12,8 +13,14 @@ answer_layout = html.Div(
                 html.Div(id="answer_image")),
                 dbc.CardBody([
                     html.P(id="answer_text", style={'font-size': '20px'}),
-                    #html.Div(id="answer_image"),
-                    dcc.Link(dbc.Button("Next", id='next_button', style={"margin-top": "30px", "fontSize": "20px", "background-color": "#348994", "border": "none"}), id="next_button_link", href="/question", refresh=True)
+                    # html.Div(id="answer_image"),
+                    # dcc.Link(dbc.Button("Next", id='next_button',
+                    #                    style={"margin-top": "30px", "fontSize": "20px", "background-color": "#348994",
+                    #                          "border": "none"}), id="next_button_link", href="/question",
+                    #         refresh=True),
+                    dbc.Button("Next", id='next_button',
+                               style={"margin-top": "30px", "fontSize": "20px", "background-color": "#348994",
+                                      "border": "none"})
                 ])
             ])],
         )
@@ -66,31 +73,32 @@ def load_answer(pathname, data):
     # find current question index, load the corresponding answer text, increase question index
     question_index = data["index"]
     answer = data[language][question_index]["answer_text"]
+    user_choice = data[language][question_index]["options"][data["user_choice"]]
     if '$' in answer:
-        user_choice = data["user_choice"]
         answer = answer.replace('$', user_choice)
     if language == "Deutsch":
         button_text = "Nächste Frage"
-        your_answer = html.P(html.B("Angegebene Antwort: " + data["user_choice"]))
+        your_answer = html.P(html.B("Angegebene Antwort: " + user_choice))
     elif language == "English":
         button_text = "Next"
-        your_answer = html.P(html.B("Your answer: " + data["user_choice"]))
+        your_answer = html.P(html.B("Your answer: " + user_choice))
     answer = html.P([your_answer, answer])
     return answer, button_text
 
 
-# When page is loaded, update the question index in the global store
-# and if you run out of questions, let the next button redirect to home
-@callback(Output('global_store', 'data'),
-          Output('next_button_link', 'href'),
-          Input('url_answer', 'pathname'),
-          State('global_store', 'data'))
-def load_answer(pathname, data):
-    language = data["language"]
-    # find current question index, load the corresponding answer text, increase question index
-    question_index = data["index"]
+# When the next button is pressed, update the global store index
+@callback(Output('global_store', 'data', allow_duplicate=True),
+          Output('url', "href"),
+          Input("next_button", "n_clicks"),
+          State("global_store", "data"),
+          prevent_initial_call=True)
+def increase_question_index(n_clicks, data):
+    if not n_clicks:
+        raise PreventUpdate
     data["index"] += 1
-    if data["index"] >= len(data[language]):
+    n_questions = len(data[data["language"]])
+    redirect = "/question"
+    if data["index"] >= n_questions:
         data["index"] = 0
-        return data, "/"
-    return data, "/question"
+        redirect = "/"
+    return data, redirect

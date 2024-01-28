@@ -1,5 +1,6 @@
 {"English": [
   {"id": 0,
+    "position": 0,
     "image": "sowjetische_Ostarbeiterinnen.jpg",
     "description_text": "During the war, huge numbers of people were deported from the annexed territories. The use of forced laborers had long been part of everyday life. Forced laborers and prisoners of war were not only used in armaments production, but in companies and all branches of industry. ",
     "question_text": "Can you estimate how high the proportion of forced laborers and prisoners of war was in the workforce in 1944?",
@@ -10,6 +11,7 @@
     "answer_image_style": {"width": "50%", "margin-top": "60px", "border-radius": "20px"}
   },
   {"id": 1,
+    "position": 1,
     "image": "",
     "description_text": "We now know that an enormous number of people worked as forced laborers in the German Reich.",
     "question_text": "Why are we talking about \"forced labor\"?",
@@ -18,6 +20,7 @@
     "answer_image": "Arbeitskarte.png"
   },
   {"id": 2,
+    "position": 2,
     "image": "Schlafraum_Ostarbeiter.png",
     "description_text": "The forced laborers were brought to Germany from the annexed territories. They were therefore of very diverse nationalities, including French, Italians, Poles, Serbs and Soviet citizens. The living conditions of the forced laborers were very precarious and the work was hard, which led to illness and even death.",
     "question_text": "Were the working conditions the same for all forced laborers?",
@@ -28,6 +31,7 @@
   ],
   "Deutsch": [
     {"id": 0,
+      "position": 0,
       "image": "sowjetische_Ostarbeiterinnen.jpg",
       "description_text": "Während des Krieges wurden massenhaft Menschen aus den annektierten Gebieten verschleppt. Der Einsatz von Zwangsarbeiter*innen war längst im Alltag der Menschen angekommen. Nicht nur in der Rüstungsproduktion, sondern in Firmen und jeglichen Branchen wurden Zwangsarbeit und Kriegsgefangene eingesetzt.",
       "question_text": "Können Sie schätzen, wie hoch der Anteil von Zwangsarbeitern und Kriegsgefangenen an der Zahl der Arbeitenden im Jahr 1944 war?",
@@ -38,6 +42,7 @@
       "answer_image_style": {"width": "50%", "margin-top": "60px", "border-radius": "20px"}
     },
     {"id": 1,
+      "position": 1,
       "image": "",
       "description_text":"Wir wissen jetzt, dass eine enorme Anzahl an Menschen als Zwangsarbeiter im Deutschen Reich gearbeitet haben.",
       "question_text": "Warum reden wir dabei eigentlich von „Zwangsarbeit“?",
@@ -46,6 +51,7 @@
       "answer_image": "Arbeitskarte.png"
     },
     {"id": 2,
+      "position": 2,
       "image": "Schlafraum_Ostarbeiter.png",
       "description_text":"Die Zwangsarbeiter sind aus den annektierten Gebieten nach Deutschland gebracht worden. Diese hatten also sehr diverse Nationalitäten, darunter Franzosen, Italiener, Polen, Serben, Sowjetbürger. Die Lebensbedingungen der Zwangsarbeiter waren sehr prekär und die Arbeit war hart, was zu Krankheit und auch Tod führte.\n",
       "question_text": "Waren die Arbeitsbedingungen für alle Zwangsarbeiter gleich?",
@@ -64,5 +70,25 @@
     {
       "header": "Welcome to the Quiz!",
       "content": ["During National Socialism, especially during the Second World War, numerous people from the annexed territories were deported to the then German Reich for forced labor. The historian Ulrich Herbert described this as the \"most violently organized deportation operation of all time.\" Exploitation was omnipresent, \"without exception, everyone who experienced the war in Germany as a young person or adult had some form of contact with the foreign workers and prisoners of war.\" Despite the immediate proximity and the enormous number of people affected, the crime was almost completely suppressed after the end of the war. Responsibility was systematically concealed and compensation claims ignored for decades. It was not until the 1980s that a public debate began, which ultimately led to the establishment of the Foundation \"Remembrance, Responsibility and Future\" in 2000. Only then did minimal compensation begin to be provided to former forced laborers and their relatives. The historical sites of forced labor, such as the RAW here in Neuaubing, are important reminders of the crime today.", "This quiz serves to remind of the crime of forced labor and to educate about the circumstances and living conditions of the people. Please bear in mind that these questions are based on historical facts and refer to the reality of many people's suffering and hardship during this time. The quiz is not intended to test your prior knowledge, but to help raise awareness of the historical reality."]
-    }
+    },
+  "Privacy Policy":
+  {
+    "header": "Privacy Policy",
+    "content": "This is our privacy policy we do not store data......."
+  },
+  "Datenschutz":
+  {
+    "header": "Datenschutzerklärung",
+    "content": "Dies ist unsere Datenschutzerklärung wir speichern keine Daten......."
+  },
+    "Imprint":
+  {
+    "header": "Contact Us",
+    "content": "......."
+  },
+  "Impressum":
+  {
+    "header": "Impressum",
+    "content": "......."
+  }
 }
