@@ -13,6 +13,7 @@ answer_options = dbc.Container(
         # className="btn-group",  # all in one line
         inputClassName="btn-check",  # remove circles
         labelClassName="btn btn-outline-secondary btn-lg",  # make options look like buttons
+        inline=True
     ), style={"padding-left": "0px"}, className="radio-group")
 
 # blueprint for the question view layout, needs ids "header", "image", "description_text", "question_text" and
@@ -31,7 +32,8 @@ question_layout = html.Div(
                                         style={"margin-top": "30px", "fontSize": "20px", "background-color": "#348994",
                                                "border": "none"}), href="/answer", refresh=True)
                 ])
-            ])],
+            ])
+        ],
         )
     ],
     id="question_layout"
@@ -99,7 +101,6 @@ def load_description_text(pathname, data):
           Input('url_question', 'pathname'),
           State('global_store', 'data'))
 def load_question_text(pathname, data):
-    print("n questions", len(data[data["language"]]))
     language = data["language"]
     question_index = data["index"]
     question_text = data[language][question_index]["question_text"]

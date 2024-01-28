@@ -37,6 +37,8 @@ footer = html.Footer(
     )
 )
 
+progress_bar = dbc.Progress(id="progress")
+
 lang_buttons = dbc.RadioItems(
     id="lang_buttons",
     className="btn-group",
@@ -65,9 +67,25 @@ app.layout = html.Div(children=[
     dcc.Location(id="url"),
     dcc.Store(id="global_store", storage_type="session", data=questions),
     header,
+    progress_bar,
     dash.page_container,
     footer
 ])
+
+
+# update the progress bar,
+@callback(Output('progress', 'value'),
+          Output('progress', 'label'),
+          Input('url', 'pathname'),
+          State('global_store', 'data'))
+def load_progress(pathname, data):
+    question_index = data["index"]
+    language = data["language"]
+    max_id = len(data[language]) - 1
+    progress_num = min((question_index/(max_id+1))*100, 100)
+    label = f"{progress_num} %" if progress_num >= 5 else ""
+    # return "Question " + str(data["Questions"][question_index]["id"])
+    return progress_num, label
 
 
 @callback(Output('home_link', "children"),
