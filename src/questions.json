@@ -126,7 +126,7 @@
       "image": "Naehmaschine_Arbeiterin.png",
       "image_style":{"width": "48%", "margin-top": "40px", "border-radius": "20px"},
       "description_text": "Vollzeitarbeit heißt heutzutage, eine 40h Arbeitswoche zu haben. In der Vergangenheit veränderte sich die durchschnittliche Arbeitszeit der Deutschen von Jahr zu Jahr. 1942 arbeiteten Deutsche 49,2h im Schnitt pro Woche.",
-      "question_text": "Wie viele Stunden arbeiten Zwangsarbeiter ab Mai 1942? ",
+      "question_text": "Wie viele Stunden arbeiten Zwangsarbeiter ab Mai 1942?",
       "options": ["55 Std","63 Std","65 Std","67 Std"],
       "answer_text": ["Korrekt sind 65 Stunden die Woche. Das beudetet im Durchschnitt mehr als 9 Stunden an jedem Tag in der Woche. Auch für einen gesunden Erwachsenen wäre diese Arbeitszeit eine starke Belastung. Zwangsarbeiter kamen jedoch aus verschiedenen Altersgruppen und erhielten normalerweise nicht dieselbe Behandlung wie Deutsche. Ohne diese extremen Arbeitszeiten wäre ein Aufrechterhalten der Versorgung der Bevölkerung und der Infrastruktur der Kriegszeitwirtschaft nicht denkbar gewesen für die sechs Jahre des Kriegs. Bei der Reichsbahn hielten Zwangsarbeiter Arbeiten wie beispielsweise Be- und Entladen, Reparaturarbeiten, Trümmerentfernung und einen Mangel von Kraftstoff mit Muskelkraft zu beheben, inne. Es entstand eine Hierarchie in der Arbeitergesellschaft, da Zwangsarbeiter alle schmutzigen, anstrengenden, unangenehmen und gefährlichen Aufgaben erhielten, unabhängig von der Industrie, in der sie arbeiteten. Es entstand vor aller Augen eine Art Subproletariat. Diese Diskriminierung ging nicht nur von Anweisungen des Regimes aus, sondern auch von lokalen Initiativen."],
       "answer_image": "workinghours_de.png",
@@ -203,6 +203,6 @@
     "header": "Impressum",
     "content": "......."
   },
-  "Fazit": "Fazit........",
-  "Conclusion": "fgdfgdfgdfgdfggdf"
+  "Fazit": ["Glückwunsch!", "Hier endet das Quiz und wir hoffen, dass es Spaß gemacht hat. Hier sind weiterführende Links:"],
+  "Conclusion": ["fgdfgdfgdfgdfggdf"]
 }
