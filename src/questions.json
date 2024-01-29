@@ -52,11 +52,11 @@
   {"id": 5,
   "position": 5,
   "image": "",
-  "description_text": "Let’s talk food. For lunch in the RAW-camp (Freimann) in the first week of February 1943, the French workers had meat dishes on 5 out of 7 days for lunch.",
+  "description_text": "Let's talk food. For lunch in the RAW-camp (Freimann) in the first week of February 1943, the French workers had meat dishes on 5 out of 7 days for lunch.",
   "question_text": "How many times during the same week was meat a part of an \"Ostarbeiter\"(\"Eastern worker\") lunch?",
   "options": ["Once","No times","Three times"],
   "option_images": ["Fleisch_1.png", "Fleisch_0.png", "Fleisch_3.png"],
-  "answer_text": "Correct is: Once. The main distinction between meal plans can be seen in general patterns in the picture above. Can you spot more differences? We know that the amount of bread received differed. Jan Hendrik Bazuin’s (Dutch) diary spoke about rations between 250 and 150g of bread, Iwan Hont (Ukrainian) spoke of 80g.Hunger was always present and a big part of many survivor’s stories. We know about Francesco Di Nuzzo, an Italian forced laborer who had worked in Neuaubing, that he returned to Italy weighing 37kg and had lost all his teeth at the age of 24.",
+  "answer_text": "Correct is: Once. The main distinction between meal plans can be seen in general patterns in the picture above. Can you spot more differences? We know that the amount of bread received differed. Jan Hendrik Bazuin's (Dutch) diary spoke about rations between 250 and 150g of bread, Iwan Hont (Ukrainian) spoke of 80g.Hunger was always present and a big part of many survivor's stories. We know about Francesco Di Nuzzo, an Italian forced laborer who had worked in Neuaubing, that he returned to Italy weighing 37kg and had lost all his teeth at the age of 24.",
   "answer_image": "Speiseplan.png"
 }
   ],
