@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import dash
 from dash import Dash, html, callback, State, Output, Input, dcc, callback_context
 from dash.exceptions import PreventUpdate

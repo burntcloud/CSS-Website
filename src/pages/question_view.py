@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from dash import dcc, html, register_page, callback, State, Output, Input, get_asset_url
 from dash.exceptions import PreventUpdate
 import dash_bootstrap_components as dbc
