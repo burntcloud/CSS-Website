@@ -8,7 +8,6 @@ register_page(__name__, path="/answer")
 answer_layout = html.Div(
     children=[
         dbc.Container([
-            html.H1(children="Answer View", style={"text-align": "center"}),
             dbc.Card([html.Center(
                 html.Div(id="answer_image")),
                 dbc.CardBody([
@@ -53,6 +52,8 @@ def load_image(pathname, data):
         style = data[language][question_index]["answer_image_style"]
     if answer_image_url:
         img = dbc.CardImg(src=get_asset_url(answer_image_url), top=True, style=style)
+        image_description = data[language][question_index]["answer_image_source_text"]
+        img = [img, html.P(image_description)]
         # make image div visible
         show_image_style = {"display": "block"}
     else:
@@ -73,7 +74,11 @@ def load_answer(pathname, data):
     # find current question index, load the corresponding answer text, increase question index
     question_index = data["index"]
     answer = data[language][question_index]["answer_text"]
-    user_choice = data[language][question_index]["options"][data["user_choice"]]
+    if str(question_index) in data["user_choice"].keys():
+        user_choice_index = data["user_choice"][str(question_index)]
+        user_choice = data[language][question_index]["options"][user_choice_index]
+    else:
+        user_choice = ""
     if '$' in answer:
         answer = answer.replace('$', user_choice)
     if language == "Deutsch":
@@ -82,8 +87,11 @@ def load_answer(pathname, data):
     elif language == "English":
         button_text = "Next"
         your_answer = html.P(html.B("Your answer: " + user_choice))
-    answer = html.P([your_answer, answer])
-    return answer, button_text
+
+    answer_list = [your_answer]
+    for paragraph in answer:
+        answer_list.append(html.P(paragraph))
+    return answer_list, button_text
 
 
 # When the next button is pressed, update the global store index
@@ -100,5 +108,6 @@ def increase_question_index(n_clicks, data):
     redirect = "/question"
     if data["index"] >= n_questions:
         data["index"] = 0
-        redirect = "/"
+        redirect = "/success"
+        data["user_choice"] = {}
     return data, redirect

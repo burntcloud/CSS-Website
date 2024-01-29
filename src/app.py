@@ -20,6 +20,7 @@ questions["all_questions"] = {x: questions[x] for x in languages}
 questions["index"] = 0
 questions["language"] = languages[0]
 questions["language_keywords"] = languages
+questions["user_choice"] = {}
 
 app = Dash(external_stylesheets=[dbc.themes.SOLAR], use_pages=True, meta_tags=[{'name': 'viewport',
                                                                                 'content': 'width=device-width, '
@@ -80,6 +81,9 @@ app.layout = html.Div(children=[
           Input('url', 'pathname'),
           State('global_store', 'data'))
 def load_progress(pathname, data):
+    if pathname == "/":
+        data["index"] = 0
+        data["user_choice"] = {}
     question_index = data["index"]
     language = data["language"]
     max_id = len(data[language]) - 1

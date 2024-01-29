@@ -71,6 +71,8 @@ def load_image(pathname, data):
         # style = data["Questions"][question_index]["image_style"]
     if image_url:
         img = dbc.CardImg(src=get_asset_url(image_url), top=True, style=style)
+        image_description = data[language][question_index]["image_source_text"]
+        img = [img, html.P(image_description)]
         # make image div visible
         show_image_style = {"display": "block"}
     else:
@@ -78,7 +80,6 @@ def load_image(pathname, data):
         # hide image div to avoid unnecessary padding when there is no image
         show_image_style = {"display": "None"}
     return img, show_image_style
-
 
 # on page load, update the description text
 @callback(Output('description_text', 'children'),
@@ -142,6 +143,6 @@ def update_store(radio_value, data):
     options = data[language][question_index]["options"]
     for i, option in enumerate(options):
         if radio_value == option:
-            data["user_choice"] = i
+            data["user_choice"][question_index] = i
             break
     return data

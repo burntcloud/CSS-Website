@@ -54,6 +54,8 @@ def update_text(pathname, data):
           State("global_store", "data"))
 def prepare_question_list(pathname, data):
     language_keywords = data["language_keywords"]
+    data["index"] = 0
+    data["user_choice"] = {}
     first_language = language_keywords[0]
     positions = list(set([q['position'] for q in data["all_questions"][first_language]]))
     chosen_ids = []
