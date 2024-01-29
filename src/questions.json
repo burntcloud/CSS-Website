@@ -7,7 +7,7 @@
     "question_text": "Can you estimate how high the proportion of forced laborers and prisoners of war was in the workforce in 1944?",
     "options": ["Every 10th laborer", "Every 4th laborer", "Every 20th laborer"],
     "option_images": ["Anteil_10.png", "Anteil_4.png", "Anteil_20.png"],
-    "answer_text": "The correct answer is: every 4th worker. In the summer of 1944, 22.9 million working Germans faced 5.7 million foreign civilian workers and 1.9 million prisoners of war. During the entire world war, 13 million forced laborers were deployed. This was mainly used to maintain agricultural supplies and armaments production. Almost every second worker in agriculture and every third worker in mining was a foreign civilian forced laborer or prisoner of war. However, countless individuals and municipal administrations also benefited. The proportion of forced laborers was particularly high in Nazi companies such as the Hermann-Goering-Werke or state-owned enterprises such as the Reichsbahn.",
+    "answer_text": ["The correct answer is: every 4th worker. In the summer of 1944, 22.9 million working Germans faced 5.7 million foreign civilian workers and 1.9 million prisoners of war. During the entire world war, 13 million forced laborers were deployed. This was mainly used to maintain agricultural supplies and armaments production. Almost every second worker in agriculture and every third worker in mining was a foreign civilian forced laborer or prisoner of war. However, countless individuals and municipal administrations also benefited. The proportion of forced laborers was particularly high in Nazi companies such as the Hermann-Goering-Werke or state-owned enterprises such as the Reichsbahn."],
     "answer_image": "Verlauf_Anzahl_eng.png",
     "answer_image_source_text": "answer test source text",
     "answer_image_style": {"width": "50%", "margin-top": "60px", "border-radius": "20px"}
@@ -18,7 +18,7 @@
     "description_text": "We now know that an enormous number of people worked as forced laborers in the German Reich.",
     "question_text": "Why are we talking about \"forced labor\"?",
     "options": ["Forced laborers did not receive a salary", "All forced laborers had to work under duress and against their will", "Forced laborers could not terminate their employment contracts independently and had to fear for their survival"],
-    "answer_text": "All answers have their claims. What is certainly true is that forced laborers could not terminate their employment contracts independently and had to fear for their survival. However, the term forced labor encompasses very different groups of people. The group of civilian forced labor refers to all people who were not prisoners of war or concentration camp inmates. On the one hand, the forced labor consisted of people in the occupied territories being systematically deprived of their livelihoods, so that many felt compelled to go to Germany for work. However, once word got around about the catastrophic conditions, hardly any \"volunteers\" came forward and large numbers of people were deported to Germany. In general, the civilian forced laborers received wages, but sometimes significantly lower than the Germans and dependent on the arbitrariness of the employers. It was hardly possible to exert any influence on the working conditions and the living conditions were so bad that people feared for their survival depending on their national origin and the time of the war.",
+    "answer_text": ["All answers have their claims. What is certainly true is that forced laborers could not terminate their employment contracts independently and had to fear for their survival. However, the term forced labor encompasses very different groups of people. The group of civilian forced labor refers to all people who were not prisoners of war or concentration camp inmates. On the one hand, the forced labor consisted of people in the occupied territories being systematically deprived of their livelihoods, so that many felt compelled to go to Germany for work. However, once word got around about the catastrophic conditions, hardly any \"volunteers\" came forward and large numbers of people were deported to Germany. In general, the civilian forced laborers received wages, but sometimes significantly lower than the Germans and dependent on the arbitrariness of the employers. It was hardly possible to exert any influence on the working conditions and the living conditions were so bad that people feared for their survival depending on their national origin and the time of the war."],
     "answer_image": "Arbeitskarte.png",
     "image_source_text": "test source text",
     "answer_image_source_text": "answer test source text"
@@ -29,7 +29,7 @@
     "description_text": "The Nazi regime annexed large parts of Europa during the war. Forced laborers were brought to Germany from various regions, hence comprising workers from diverse nationalities, including French, Italians, Poles, Serbs and Soviet citizens. The living conditions in forced labor were very precarious and the work was hard, which led to illness and even death.",
     "question_text": "Were the rights the same for all forced laborers in Germany?",
     "options": ["Yes, all forced laborers had the same precarious legal status", "No, working conditions depended, in part, heavily on the nationality of the worker"],
-    "answer_text": "Working conditions depended very much on the nationality of the worker. Forced laborers from northern, western, southern and even southeastern Europe received in principle the same wages as their German colleagues. Poles and \"Eastern workers\" (\"Ostarbeiter\") were at a severe disadvantage from the outset due to discriminatory regulations. \"Equal pay for equal work\" did not apply. The \"Polish decrees\" of March 1940 stipulated that Polish forced laborers were to receive 20 percent less pay than Germans.    MORE TEXT TO FOLLOW   (Explanation of labels etc.)",
+    "answer_text": ["Working conditions depended very much on the nationality of the worker. Forced laborers from northern, western, southern and even southeastern Europe received in principle the same wages as their German colleagues. Poles and \"Eastern workers\" (\"Ostarbeiter\") were at a severe disadvantage from the outset due to discriminatory regulations. \"Equal pay for equal work\" did not apply. The \"Polish decrees\" of March 1940 stipulated that Polish forced laborers were to receive 20 percent less pay than Germans.    MORE TEXT TO FOLLOW   (Explanation of labels etc.)"],
     "answer_image": "Kennzeichen.png",
     "image_source_text": "test source text",
     "answer_image_source_text": "answer test source text"
@@ -41,32 +41,45 @@
     "description_text": "Today, a full-time job in Germany means a forty-hour work week. This amount fluctuated in the past. Germans in 1942 were working 49.2 hours on average per week. ",
     "question_text": "How many hours did forced laborers work in comparison from May 1942 onwards?",
     "options": ["55h","63h","65h","67h"],
-    "answer_text": "Correct is 65 hours a week. This means an average of more than 9 hours every day of the week. While this amount is strenuous at best on a healthy adult, forced laborers came from a wide age group and usually did not receive the same treatment as Germans did. Without this increase in workload the well-being of the German population and the infrastructure of the war economy could not have been kept up for the six years of WWII. Specifically for the Reichsbahn, forced laborers took on tasks of loading and unloading cargo, repairing wagons, removing rubble, as well as making up for a lack of fuel with muscle power. Blue-collar work became hierarchically structured as forced laborers received all dangerous, dirty and strenuous tasks. Since they worked in many areas and the discrimination was visible, this led to the establishment of a sub-proletariat. This kind of racism was not coming from higher-ups only, initiatives by locals were also contributing to the difference in treatment.",
+    "answer_text": ["Correct is 65 hours a week. This means an average of more than 9 hours every day of the week. While this amount is strenuous at best on a healthy adult, forced laborers came from a wide age group and usually did not receive the same treatment as Germans did. Without this increase in workload the well-being of the German population and the infrastructure of the war economy could not have been kept up for the six years of WWII. Specifically for the Reichsbahn, forced laborers took on tasks of loading and unloading cargo, repairing wagons, removing rubble, as well as making up for a lack of fuel with muscle power. Blue-collar work became hierarchically structured as forced laborers received all dangerous, dirty and strenuous tasks. Since they worked in many areas and the discrimination was visible, this led to the establishment of a sub-proletariat. This kind of racism was not coming from higher-ups only, initiatives by locals were also contributing to the difference in treatment."],
     "answer_image": "workinghours.png",
     "answer_image_style": {"width": "50%", "margin-top": "60px", "border-radius": "20px"},
     "image_source_text": "test source text",
     "answer_image_source_text": "answer test source text"
   },
   {"id": 4,
-  "position": 4,
+    "position": 4,
+    "image": "RAW_Picture.png",
+    "image_style":{"width": "50%", "margin-top": "40px", "border-radius": "20px"},
+    "description_text": "Neuaubing question",
+    "question_text": "",
+    "options": ["55h","63h","65h","67h"],
+    "answer_text": [""],
+    "answer_image": "Neuaubing_Skizze.png",
+    "answer_image_style": {"width": "50%", "margin-top": "60px", "border-radius": "20px"},
+    "image_source_text": "test source text",
+    "answer_image_source_text": "answer test source text"
+  },
+  {"id": 5,
+  "position": 5,
   "image": "Bunker_Neuaubing.png",
   "image_style":{"width": "48%", "margin-top": "40px", "border-radius": "20px"},
   "description_text": "Workers in the RAW-camp in Neuaubing were subject to strict rules that governed their daily lives",
   "question_text": "Which of these activities was not prohibited?",
   "options": ["Leaving the camp except for work", "Getting married and raising children in the camp","Using public transportation","Using air raid shelters"],
-  "answer_text": "Marriage between forced laborers and raising children among them was allowed in the forced labor camp in Neuaubing. In the early days, pregnant women were sent home. Later they were required to work until shortly before giving birth and then raise their children in the camp. Many rules in the camp were designed to restrict the contact of forced laborers with the local population. This included restrictions such as not allowing forced laborers to use public transportation or eat at the same table as their German employers. Romantic relationships with locals were punishable by death. Some prohibitions were regularly violated, for example, when children left the camp to beg for food in the neighborhood. Violating a prohibition could result in beatings, deportation to the Dachau concentration camp, or execution. Since forced laborers did not have air raid shelters, they were more vulnerable to Allied air raids than the rest of the population.",
+  "answer_text": ["Marriage between forced laborers and raising children among them was allowed in the forced labor camp in Neuaubing. In the early days, pregnant women were sent home. Later they were required to work until shortly before giving birth and then raise their children in the camp. Many rules in the camp were designed to restrict the contact of forced laborers with the local population. This included restrictions such as not allowing forced laborers to use public transportation or eat at the same table as their German employers. Romantic relationships with locals were punishable by death. Some prohibitions were regularly violated, for example, when children left the camp to beg for food in the neighborhood. Violating a prohibition could result in beatings, deportation to the Dachau concentration camp, or execution. Since forced laborers did not have air raid shelters, they were more vulnerable to Allied air raids than the rest of the population."],
   "answer_image": "",
   "image_source_text": "test source text",
   "answer_image_source_text": "answer test source text"
   },
-  {"id": 5,
-  "position": 5,
+  {"id": 6,
+  "position": 6,
   "image": "",
   "description_text": "Let's talk food. For lunch in the RAW-camp (Freimann) in the first week of February 1943, the French workers had meat dishes on 5 out of 7 days for lunch.",
   "question_text": "How many times during the same week was meat a part of an \"Ostarbeiter\"(\"Eastern worker\") lunch?",
   "options": ["Once","No times","Three times"],
   "option_images": ["Fleisch_1.png", "Fleisch_0.png", "Fleisch_3.png"],
-  "answer_text": "Correct is: Once. The main distinction between meal plans can be seen in general patterns in the picture above. Can you spot more differences? We know that the amount of bread received differed. Jan Hendrik Bazuin's (Dutch) diary spoke about rations between 250 and 150g of bread, Iwan Hont (Ukrainian) spoke of 80g.Hunger was always present and a big part of many survivor's stories. We know about Francesco Di Nuzzo, an Italian forced laborer who had worked in Neuaubing, that he returned to Italy weighing 37kg and had lost all his teeth at the age of 24.",
+  "answer_text": ["Correct is: Once. The main distinction between meal plans can be seen in general patterns in the picture above. Can you spot more differences? We know that the amount of bread received differed. Jan Hendrik Bazuin's (Dutch) diary spoke about rations between 250 and 150g of bread, Iwan Hont (Ukrainian) spoke of 80g.Hunger was always present and a big part of many survivor's stories. We know about Francesco Di Nuzzo, an Italian forced laborer who had worked in Neuaubing, that he returned to Italy weighing 37kg and had lost all his teeth at the age of 24."],
   "answer_image": "Speiseplan.png",
   "image_source_text": "test source text",
   "answer_image_source_text": "answer test source text"
@@ -103,7 +116,7 @@
       "description_text":"Das NS-Regime hat während des Krieges weite Teile Europas annektiert. Die Zwangsarbeiter sind aus unterschiedlichsten Gebieten nach Deutschland gebracht worden. Diese hatten also sehr diverse Nationalitäten, darunter Franzosen, Italiener, Polen, Serben, Sowjetbürger. Die Lebensbedingungen in der Zwangsarbeit waren prekär und die Arbeit war hart, was zu Krankheit und auch Tod führte.",
       "question_text": "Waren die Arbeitsbedingungen für alle Zwangsarbeiter gleich?",
       "options": ["Ja, alle Zwangsarbeiter hatten den gleichen prekären rechtlichen Status.", "Nein, die Arbeitsbedingungen hingen stark von der nationalen Zugehörigkeit ab."],
-      "answer_text": "Die Arbeitsbedingungen hingen sehr stark von der nationalen Zugehörigkeit ab. Zwangsarbeiter aus Nord-, West-, Süd- und selbst Südosteuropa erhielten im Prinzip denselben Lohn wie ihre deutschen Kollegen. Polen und „Ostarbeiter“ waren von Anfang an durch diskriminierende Verordnungen stark benachteiligt. „Gleicher Lohn für gleiche Arbeit“ galt nicht. In den „Polen-Erlassen“ vom März 1940 wurde festgelegt, dass polnische Zwangsarbeiter 20 Prozent weniger Lohn als Deutsche erhalten sollten.",
+      "answer_text": ["Die Arbeitsbedingungen hingen sehr stark von der nationalen Zugehörigkeit ab. Zwangsarbeiter aus Nord-, West-, Süd- und selbst Südosteuropa erhielten im Prinzip denselben Lohn wie ihre deutschen Kollegen. Polen und „Ostarbeiter“ waren von Anfang an durch diskriminierende Verordnungen stark benachteiligt. „Gleicher Lohn für gleiche Arbeit“ galt nicht. In den „Polen-Erlassen“ vom März 1940 wurde festgelegt, dass polnische Zwangsarbeiter 20 Prozent weniger Lohn als Deutsche erhalten sollten."],
       "answer_image": "Kennzeichen_de.png",
       "image_source_text": "test source text",
       "answer_image_source_text": "answer test source text"
@@ -115,26 +128,39 @@
       "description_text": "Vollzeitarbeit heißt heutzutage, eine 40h Arbeitswoche zu haben. In der Vergangenheit veränderte sich die durchschnittliche Arbeitszeit der Deutschen von Jahr zu Jahr. 1942 arbeiteten Deutsche 49,2h im Schnitt pro Woche.",
       "question_text": "Wie viele Stunden arbeiten Zwangsarbeiter ab Mai 1942? ",
       "options": ["55 Std","63 Std","65 Std","67 Std"],
-      "answer_text": "Korrekt sind 65 Stunden die Woche. Das beudetet im Durchschnitt mehr als 9 Stunden an jedem Tag in der Woche. Auch für einen gesunden Erwachsenen wäre diese Arbeitszeit eine starke Belastung. Zwangsarbeiter kamen jedoch aus verschiedenen Altersgruppen und erhielten normalerweise nicht dieselbe Behandlung wie Deutsche. Ohne diese extremen Arbeitszeiten wäre ein Aufrechterhalten der Versorgung der Bevölkerung und der Infrastruktur der Kriegszeitwirtschaft nicht denkbar gewesen für die sechs Jahre des Kriegs. Bei der Reichsbahn hielten Zwangsarbeiter Arbeiten wie beispielsweise Be- und Entladen, Reparaturarbeiten, Trümmerentfernung und einen Mangel von Kraftstoff mit Muskelkraft zu beheben, inne. Es entstand eine Hierarchie in der Arbeitergesellschaft, da Zwangsarbeiter alle schmutzigen, anstrengenden, unangenehmen und gefährlichen Aufgaben erhielten, unabhängig von der Industrie, in der sie arbeiteten. Es entstand vor aller Augen eine Art Subproletariat. Diese Diskriminierung ging nicht nur von Anweisungen des Regimes aus, sondern auch von lokalen Initiativen.",
+      "answer_text": ["Korrekt sind 65 Stunden die Woche. Das beudetet im Durchschnitt mehr als 9 Stunden an jedem Tag in der Woche. Auch für einen gesunden Erwachsenen wäre diese Arbeitszeit eine starke Belastung. Zwangsarbeiter kamen jedoch aus verschiedenen Altersgruppen und erhielten normalerweise nicht dieselbe Behandlung wie Deutsche. Ohne diese extremen Arbeitszeiten wäre ein Aufrechterhalten der Versorgung der Bevölkerung und der Infrastruktur der Kriegszeitwirtschaft nicht denkbar gewesen für die sechs Jahre des Kriegs. Bei der Reichsbahn hielten Zwangsarbeiter Arbeiten wie beispielsweise Be- und Entladen, Reparaturarbeiten, Trümmerentfernung und einen Mangel von Kraftstoff mit Muskelkraft zu beheben, inne. Es entstand eine Hierarchie in der Arbeitergesellschaft, da Zwangsarbeiter alle schmutzigen, anstrengenden, unangenehmen und gefährlichen Aufgaben erhielten, unabhängig von der Industrie, in der sie arbeiteten. Es entstand vor aller Augen eine Art Subproletariat. Diese Diskriminierung ging nicht nur von Anweisungen des Regimes aus, sondern auch von lokalen Initiativen."],
       "answer_image": "workinghours_de.png",
       "answer_image_style": {"width": "50%", "margin-top": "60px", "border-radius": "20px"},
       "image_source_text": "test source text",
       "answer_image_source_text": "answer test source text"
     },
     {"id": 4,
-      "position": 4,
+    "position": 4,
+    "image": "RAW_Picture.png",
+    "image_style":{"width": "50%", "margin-top": "40px", "border-radius": "20px"},
+    "description_text": " Frage zu Neuaubing Lager",
+    "question_text": "",
+    "options": ["55h","63h","65h","67h"],
+    "answer_text": [""],
+    "answer_image": "Neuaubing_Skizze.png",
+    "answer_image_style": {"width": "50%", "margin-top": "60px", "border-radius": "20px"},
+    "image_source_text": "test source text",
+    "answer_image_source_text": "answer test source text"
+    },
+    {"id": 5,
+      "position": 5,
       "image": "Bunker_Neuaubing.png",
       "image_style":{"width": "39%", "margin-top": "40px", "border-radius": "20px"},
       "description_text": "Arbeiter*innen im RAW-Lager Neuaubing unterlagen strengen Regeln, die ihren Alltag bestimmten.",
       "question_text": "Welche dieser Aktivitäten war nicht verboten?",
       "options": ["Das Verlassen des Lagers außer zum Arbeiten","Das Heiraten und Aufziehen von Kindern im Lager","Die Benutzung von öffentlichen Verkehrsmitteln","Die Benutzung von Luftschutzbunkern"],
-      "answer_text": "Die Heirat von Zwangsarbeitern untereinander sowie das Aufziehen von Kindern war im Zwangsarbeiterlager in Neuaubing erlaubt. In der Anfangszeit wurden schwangere Frauen nach Hause geschickt, später jedoch mussten sie bis kurz vor der Geburt arbeiten und zogen ihre Kinder danach im Lager auf. Viele der Regeln im Lager dienten vor allem dazu, den Kontakt der Zwangsarbeiter zur einheimischen Bevölkerung einzuschränken. Dazu zählte auch, dass Zwangsarbeiter die öffentlichen Verkehrsmittel nicht nutzen durften oder nicht mit ihren deutschen Arbeitgebern an einem Tisch essen durften. Liebesbeziehungen zu Einheimischen wurden mit dem Tod bestraft. Manche Verbote wurden häufig gebrochen, etwa wenn Kinder in der Nachbarschaft um Essen bettelten. Der Verstoß gegen ein Verbot konnte mit Schlägen bestraft werden, mit der Deportation ins Konzentrationslager Dachau oder mit einer Hinrichtung. Da Zwangsarbeitern keine Luftschutzanlagen zur Verfügung standen, waren sie durch alliierte Luftangriffe mehr gefährdet als der Rest der Bevölkerung.",
+      "answer_text": ["Die Heirat von Zwangsarbeitern untereinander sowie das Aufziehen von Kindern war im Zwangsarbeiterlager in Neuaubing erlaubt. In der Anfangszeit wurden schwangere Frauen nach Hause geschickt, später jedoch mussten sie bis kurz vor der Geburt arbeiten und zogen ihre Kinder danach im Lager auf. Viele der Regeln im Lager dienten vor allem dazu, den Kontakt der Zwangsarbeiter zur einheimischen Bevölkerung einzuschränken. Dazu zählte auch, dass Zwangsarbeiter die öffentlichen Verkehrsmittel nicht nutzen durften oder nicht mit ihren deutschen Arbeitgebern an einem Tisch essen durften. Liebesbeziehungen zu Einheimischen wurden mit dem Tod bestraft. Manche Verbote wurden häufig gebrochen, etwa wenn Kinder in der Nachbarschaft um Essen bettelten. Der Verstoß gegen ein Verbot konnte mit Schlägen bestraft werden, mit der Deportation ins Konzentrationslager Dachau oder mit einer Hinrichtung. Da Zwangsarbeitern keine Luftschutzanlagen zur Verfügung standen, waren sie durch alliierte Luftangriffe mehr gefährdet als der Rest der Bevölkerung."],
       "answer_image": "",
       "image_source_text": "test source text",
       "answer_image_source_text": "answer test source text"
     },
-    {"id": 5,
-      "position": 5,
+    {"id": 6,
+      "position": 6,
       "image": "",
       "description_text": "Reden wir über den Speiseplan! Im RAW in Freimann in der ersten Februarwoche 1943 hatten französische Arbeiter*innen an fünf von sieben Tagen Fleisch im Speiseplan.",
       "question_text": "Wie häufig war Fleisch im Wochenspeiseplan der \"Ostarbeiter\" vertreten?",
@@ -149,13 +175,13 @@
   "Einführung":
     {
       "header": "Willkommen beim Quiz!",
-      "content":["Test"]
+      "content":["Während des Zweiten Weltkrieges wurden große Gebiete Europas von NS-Deutschland annektiert. 1940 begannen die Nationalsozialisten neben KZ-Häftlingen und Kriegsgefangenen zusätzliche Personen für den ‚Arbeitseinsatz‘ in der deutschen Kriegswirtschaft zu rekrutieren. Daraus entwickelte sich ein gnadenloses System der Zwangsarbeit, worunter Millionen von Menschen litten. Diese Ausbeutung war während des Krieges allgegenwärtig in Deutschland, jedoch wurden die Verbrechen nach Kriegsende nahezu komplett verdrängt und Entschädigungsansprüche systematisch verschleiert.","Die historischen Orte der Zwangsarbeit, wie das RAW-Lager in Neuaubing (München), sind heute wichtige Zeugnisse, die an das Verbrechen erinnern sollen. Dieses Quiz dient dazu, über die Umstände und Lebensverhältnisse in der Zwangsarbeit zwischen 1939 und 1945 aufzuklären und zu erinnern. Es soll kein Vorwissen abgefragt werden, sondern auf interaktive Weise das Bewusstsein für die historische Realität fördern. Viel Spaß!"]
     }
   ,
   "Introduction":
     {
       "header": "Welcome to the Quiz!",
-      "content": ["During National Socialism, especially during the Second World War, numerous people from the annexed territories were deported to the then German Reich for forced labor. The historian Ulrich Herbert described this as the \"most violently organized deportation operation of all time.\" Exploitation was omnipresent, \"without exception, everyone who experienced the war in Germany as a young person or adult had some form of contact with the foreign workers and prisoners of war.\" Despite the immediate proximity and the enormous number of people affected, the crime was almost completely suppressed after the end of the war. Responsibility was systematically concealed and compensation claims ignored for decades. It was not until the 1980s that a public debate began, which ultimately led to the establishment of the Foundation \"Remembrance, Responsibility and Future\" in 2000. Only then did minimal compensation begin to be provided to former forced laborers and their relatives. The historical sites of forced labor, such as the RAW here in Neuaubing, are important reminders of the crime today.", "This quiz serves to remind of the crime of forced labor and to educate about the circumstances and living conditions of the people. Please bear in mind that these questions are based on historical facts and refer to the reality of many people's suffering and hardship during this time. The quiz is not intended to test your prior knowledge, but to help raise awareness of the historical reality."]
+      "content": ["During the Second World War, large areas of Europe were annexed by Nazi Germany. In 1940, the National Socialists began to recruit additional people for 'labor deployment' in the German war economy alongside concentration camp inmates and prisoners of war. This developed into a merciless system of forced labor from which millions of people suffered. This exploitation was omnipresent in Germany during the war, but the crimes were almost completely suppressed after the end of the war and compensation claims were systematically concealed.","The historical sites of forced labor, such as the RAW camp in Neuaubing (Munich), are important reminders of the crime today. The purpose of this quiz is to educate and remind people about the circumstances and living conditions in forced labor between 1939 and 1945. It is not intended to test prior knowledge, but to promote awareness of the historical reality in an interactive way. Enjoy the quiz!"]
     },
   "Privacy Policy":
   {
