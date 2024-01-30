@@ -12,12 +12,12 @@ df = pd.DataFrame(data, columns=['Country', 'Size', 'ISO3'])
 
 fig = px.scatter_geo(df, locations="ISO3", color="Size",
                      hover_name="Country", size="Size",
-                     projection="natural earth", fitbounds="locations",
-                     template="seaborn")
+                     hover_data={'Size': False, 'ISO3': False},
+                     projection="natural earth", fitbounds="locations")
 fig.update_geos(showocean=True, oceancolor="#1F434A")
 
-fig.update_layout(height=300, margin={"r": 0, "t": 0, "l": 0, "b": 0}, plot_bgcolor="#1F434A", paper_bgcolor="#1F434A",
-                  legend_font_color="#ced4da")
+fig.update_layout(height=300, margin={"r": 0, "t": 0, "l": 0, "b": 0}, plot_bgcolor="#1F434A", paper_bgcolor="#1F434A")
+fig.update_layout(showlegend=False)
 
 layout = html.Div(
     children=[
@@ -51,8 +51,12 @@ def update_main_page(pathname, data):
     if language == "Deutsch":
         for paragraph in data["Fazit"]:
             mixed.append(html.P(paragraph))
+        for link in data["Links"]:
+            mixed.append(dbc.Row(html.A(href=link, children=link)))
         return "Zurück", mixed
     else:
         for paragraph in data["Conclusion"]:
             mixed.append(html.P(paragraph))
+        for link in data["Links"]:
+            mixed.append(dbc.Row(html.A(href=link, children=link)))
         return "Home", mixed
