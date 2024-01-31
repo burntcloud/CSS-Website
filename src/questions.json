@@ -205,6 +205,7 @@
     "header": "Impressum",
     "content": "......."
   },
-  "Fazit": ["Glückwunsch!", "Hier endet das Quiz und wir hoffen, dass es Spaß gemacht hat. Hier sind weiterführende Links:"],
-  "Conclusion": ["fgdfgdfgdfgdfggdf"]
+  "Fazit": ["Glückwunsch!", "Hier endet das Quiz und wir hoffen, dass es Spaß gemacht hat und lehrreich war. Auf der Landkarte sind die Herkunftsländer der Zwangsarbeiter, die nachweisbar waren. Je größer der Punkt, umso mehr Menschen kamen aus dem Land.", "Um mehr über das RAW in Neuaubing, frühere Zwangsarbeiter und Zwangsarbeit allgemein zu lernen, sind hier weitere Ressourcen:"],
+  "Links": ["https://departure-neuaubing.nsdoku.de/", "https://www.ns-zwangsarbeit.de/home/", "https://www.stiftung-evz.de/"],
+  "Conclusion": ["Congratulations, you finished the quiz!", "We hope you had fun and learned something new. We invite you to take a look at the map which shows the places of origin of Neuaubing forced laborers we were able to confirm.", "To learn more about the RAW in Neuaubing, forced laborers and forced labor in general, we've gathered a few resources:"]
 }
