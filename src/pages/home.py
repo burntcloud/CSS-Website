@@ -16,7 +16,7 @@ layout = html.Div(
             ),
             dbc.Row(
                 dbc.Card([
-                    dbc.CardBody(id="intro_card")
+                    dbc.CardBody(id="intro_card", style={'font-size': '22px'})
                 ])),
             dbc.Row(
                 dcc.Link(
