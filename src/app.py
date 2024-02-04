@@ -101,9 +101,9 @@ def load_progress(pathname, data):
           State("global_store", "data"))
 def update_main_page(pathname, data):
     if data["language"] == "Deutsch":
-        return "Startseite", "Datenschutzerklärung", "Impressum", "CSS Quizz"
+        return "Startseite", "Datenschutzerklärung", "Impressum", "Erinnern an Zwangsarbeit - Quiz"
     else:
-        return "Home", "Privacy", "Imprint", "CSS Quiz"
+        return "Home", "Privacy", "Imprint", "Remembering Forced Labor - Quiz"
 
 
 # callback to

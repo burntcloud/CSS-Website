@@ -197,7 +197,7 @@
       "options": ["5%","15%","65%"],
       "option_images": ["Entschaedigt_5.png", "Entschaedigt_15.png", "Entschaedigt_65.png"],
       "answer_text": ["Nur etwa 15% der geschätzten Opfer der Zwangsarbeit in Deutschland erhielten finanzielle Entschädigungen." ,"Erst in den 1980er Jahren kam in Deutschland die Debatte um die \"vergessenen Opfer\" auf und damit auch die Debatte um die Entschädigung von Zwangsarbeitern. Doch erst m Jahr 2001 gibt es erste systematische Auszahlungen durch die Stiftung \"Erinnerung, Verantwortung, Zukunft\". Diese Stiftung finanzierte sich aus freiwilligen Spenden von 6500 Unternehmen und verfügte über rund 4,1 Milliarden Euro. Zwischen 2001 und 2007 erhielten die Überlebenden dann eine einmalige Auszahlung zwischen 500 und 7.700 Euro, welche je nach Herkunftsland und Schwere der Lagerbedingungen differierte.", "Trotz der Bemühungen der Stiftung wurden nur etwa 15% der geschätzten ehemaligen Zwangsarbeiter entschädigt. Mehr als 50 Jahre nach dem Krieg waren viele Betroffene bereits nicht mehr am Leben. Zudem hatten Überlebende oftmals ihre Dokumente nach Freilassung zerstört um bei der Rückkehr Heimatstaaten nicht als Kollaborateure oder Verräter beschuldigt zu werden. Einige Gruppen von Betroffenen, wie etwa ehemalige Kriegsgefangene, waren außerdem von vornherein von Zahlungen ausgeschlossen."],
-      "answer_image": "Entschaedigung.jpg",
+      "answer_image": "Entschaedigung_de.jpg",
       "image_source_text": "test source text",
       "answer_image_source_text": "Die Zahl der Entschädigten nach Land durch die Stiftung EVZ und zum Vergleich die Zahl der 1945 dort noch lebenden Zwangsarbeiter*innen (ohne KZ-Häftlinge). Länder, für die keine Zahlen bekannt sind, wurden weggelassen (Quelle: bpb)."
     }
