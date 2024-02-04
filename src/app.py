@@ -56,7 +56,7 @@ header = dbc.Container([
     dbc.Row([
         dbc.Col(
             dcc.Link(
-                html.H1("", style={'font-size': '70px'}, id="page_title"),
+                html.H1("", style={'font-size': '60px'}, id="page_title"),
                 href="/",
                 style={"textDecoration": "none"}
             )
