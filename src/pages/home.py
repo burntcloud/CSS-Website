@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
-from dash import dcc, html, register_page, callback, State, Output, Input, get_asset_url
-from dash.exceptions import PreventUpdate
-import dash_bootstrap_components as dbc
 import random
 
+import dash_bootstrap_components as dbc
+from dash import dcc, html, register_page, callback, State, Output, Input
+from dash.exceptions import PreventUpdate
+
+# register sub page home
 register_page(__name__, path="/")
 
-
+# LAYOUT
 layout = html.Div(
     children=[
         dcc.Location(id='home', refresh=False),
@@ -28,23 +30,36 @@ layout = html.Div(
 )
 
 
-# for button update callback input output etc
+# CALLBACKS
 @callback(Output('intro_card', 'children'),
           Output('start_button', 'children'),
           Input('home', 'pathname'),
           State('global_store', 'data'))
 def update_text(pathname, data):
+    """
+    When the page loads, load the introduction text and the text on the start button in the correct language.
+
+    parameters:
+    - pathname (str): url.pathname, current location (not used, only to trigger the callback when the page loads)
+    - data (dict): global_store.data, global memory
+
+    return values:
+    - (list(html.P()): list of html paragraphs of the introduction text
+    - (str): text on the start quiz button
+    """
     language = data['language']
     if language == "English":
         children = [html.H2(data["Introduction"]["header"])]
         for x in data["Introduction"]["content"]:
             children.append(html.P(x))
         children2 = "Start Quiz"
-    if language == "Deutsch":
+    elif language == "Deutsch":
         children = [html.H2(data["Einführung"]["header"])]
         for x in data["Einführung"]["content"]:
             children.append(html.P(x))
         children2 = "Quiz starten"
+    else:
+        raise PreventUpdate
     return children, children2
 
 
@@ -53,6 +68,17 @@ def update_text(pathname, data):
           Input("home", "pathname"),
           State("global_store", "data"))
 def prepare_question_list(pathname, data):
+    """
+    Prepare the quiz run by sampling one question per position randomly and storing the new question list in data[language]
+    for each language
+
+    parameters:
+    - pathname (str): url.pathname, current location (not used, only to trigger the callback when the page loads)
+    - data (dict): global_store.data, global memory
+
+    return values:
+    - (dict): global_store.data, the updated global memory with the questions list for this quiz run
+    """
     language_keywords = data["language_keywords"]
     data["index"] = 0
     data["user_choice"] = {}
@@ -63,7 +89,7 @@ def prepare_question_list(pathname, data):
     # step 1: get one id for each position
     for position in positions:
         ids = [q['id'] for q in all_questions if q['position'] == position]
-        chosen_ids.append(ids[random.randint(0, len(ids)-1)])
+        chosen_ids.append(ids[random.randint(0, len(ids) - 1)])
     # step 2: filter the question lists for every language to contain only chosen ids
     for language in language_keywords:
         question_list = data["all_questions"][language]

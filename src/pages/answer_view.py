@@ -1,9 +1,11 @@
-from dash import html, register_page, dcc, callback, Input, Output, State, get_asset_url
 import dash_bootstrap_components as dbc
+from dash import html, register_page, dcc, callback, Input, Output, State, get_asset_url
 from dash.exceptions import PreventUpdate
 
+# register the answer sub-page
 register_page(__name__, path="/answer")
 
+# LAYOUT
 # Blueprint for the answer view layout, needs ids "header", "image", "description_text", "question_text" and "submit_button"
 answer_layout = html.Div(
     children=[
@@ -12,11 +14,6 @@ answer_layout = html.Div(
                 html.Div(id="answer_image")),
                 dbc.CardBody([
                     html.P(id="answer_text", style={'font-size': '20px'}),
-                    # html.Div(id="answer_image"),
-                    # dcc.Link(dbc.Button("Next", id='next_button',
-                    #                    style={"margin-top": "30px", "fontSize": "20px", "background-color": "#348994",
-                    #                          "border": "none"}), id="next_button_link", href="/question",
-                    #         refresh=True),
                     dbc.Button("Next", id='next_button',
                                style={"margin-top": "30px", "fontSize": "20px", "background-color": "#348994",
                                       "border": "none"})
@@ -33,12 +30,23 @@ layout = html.Div(children=[
 ])
 
 
-# on page load, insert or delete the answer's image and if necessary adapt size
 @callback(Output('answer_image', 'children'),
           Output('answer_image', 'style'),
           Input('url_answer', 'pathname'),
           State('global_store', 'data'))
 def load_image(pathname, data):
+    """
+    On page load, insert or delete the answer's image and if necessary adapt size.
+
+    parameters:
+    - pathname (str): url.pathname, current location (not used, only to trigger the callback when the page loads)
+    - data (dict): global_store.data, global memory
+
+    return values:
+    - (Optional([dbc.CardImg, html.P])): answer_image.children, None if there is no image, otherwise it contains the
+    answer image and the image description as html paragraph
+    - (dict): dictionary with the image's css style
+    """
     language = data["language"]
     question_index = data["index"]
     answer_image_url = ""
@@ -63,15 +71,25 @@ def load_image(pathname, data):
     return img, show_image_style
 
 
-# on page load, load the answer text
 @callback(Output('answer_text', 'children'),
           Output('next_button', 'children'),
           Input('url_answer', 'pathname'),
           State('global_store', 'data'))
 def load_answer(pathname, data):
+    """
+    When the page loads, load the answer text and the text on the next button in the correct language.
+
+    parameters:
+    - pathname (str): url.pathname, current location (not used, only to trigger the callback when the page loads)
+    - data (dict): global_store.data, global memory
+
+    return values:
+    - (list(html.P)): list of html paragraphs of the answer text
+    - (str): text on the next button
+    """
     language = data["language"]
 
-    # find current question index, load the corresponding answer text, increase question index
+    # find current question index, load the corresponding answer text
     question_index = data["index"]
     answer = data[language][question_index]["answer_text"]
     if str(question_index) in data["user_choice"].keys():
@@ -87,6 +105,9 @@ def load_answer(pathname, data):
     elif language == "English":
         button_text = "Next"
         your_answer = html.P(html.B("Your answer: " + user_choice))
+    else:
+        button_text = ""
+        your_answer = html.P(html.B(user_choice))
 
     answer_list = [your_answer]
     for paragraph in answer:
@@ -94,13 +115,23 @@ def load_answer(pathname, data):
     return answer_list, button_text
 
 
-# When the next button is pressed, update the global store index
 @callback(Output('global_store', 'data', allow_duplicate=True),
           Output('url', "href"),
           Input("next_button", "n_clicks"),
           State("global_store", "data"),
           prevent_initial_call=True)
 def increase_question_index(n_clicks, data):
+    """
+    When the next button is clicked, increase the index in the global store
+
+    parameters:
+    - n_clicks (int): next_button.n_clicks: number of times the user already clicked on the next button
+    - data (dict): global_store.data, global memory
+
+    return values:
+    - (dict): global memory with the updated question index
+    - (str): url.href, url of the page that is loaded when this callback finishes, either question page or success page
+    """
     if not n_clicks:
         raise PreventUpdate
     data["index"] += 1
